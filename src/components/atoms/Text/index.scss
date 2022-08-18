@@ -1,9 +1,42 @@
 .a-text {
-    font-family: $font-roboto;
     @include style-color();
     @include style-font-weight();
+    @include style-general();
+    @include style-font();
+
+    &-14x18 {
+        @include font-base(14, 18);
+
+        @include mobile-down {
+            @include font-base(12, 18);
+        }
+    }
+
+    &-14x32 {
+        @include font-base(14, 32);
+        @include mobile-down {
+            @include font-base(12, 32);
+        }
+    }
+
+    &-14x42 {
+        @include font-base(14, 42);
+        @include mobile-down {
+            @include font-base(12, 42);
+        }
+    }
 
     &-16x24 {
-        @include font-base(16,24);
+        @include font-base(16, 24);
+        @include mobile-down {
+            @include font-base(14, 24);
+        }
+    }
+
+    &-80x88 {
+        @include font-base(80, 88);
+        @include mobile-down {
+            @include font-base(80, 88);
+        }
     }
 }

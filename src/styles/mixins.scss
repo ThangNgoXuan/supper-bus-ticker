@@ -156,10 +156,14 @@
 
 $colors-design: (
     'black': $black,
+    'red': $red,
+    'white': $white,
+    'spanishGray': $spanish-gray,
 );
 
 $font-design: (
     'fontRoboto': $font-roboto,
+    'fontLato': $font-lato,
 );
 
 @mixin style-font {
