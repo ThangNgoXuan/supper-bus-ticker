@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Text from './components/atoms/Text/index';
 
 function App() {
   return (
     <div className="App">
-      Bán vé xe
+      <Text content='page'/>
     </div>
   );
 }

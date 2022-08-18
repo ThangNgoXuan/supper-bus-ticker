@@ -1,0 +1,9 @@
+.a-text {
+    font-family: $font-roboto;
+    @include style-color();
+    @include style-font-weight();
+
+    &-16x24 {
+        @include font-base(16,24);
+    }
+}
