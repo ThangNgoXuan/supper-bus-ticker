@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/supper-bus-ticker/static/css/main.073c9b0a.css",
-    "main.js": "/supper-bus-ticker/static/js/main.e6ac2125.js",
+    "main.js": "/supper-bus-ticker/static/js/main.4b997d19.js",
     "static/js/787.eebb2670.chunk.js": "/supper-bus-ticker/static/js/787.eebb2670.chunk.js",
     "static/media/logo.svg": "/supper-bus-ticker/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/supper-bus-ticker/index.html",
     "main.073c9b0a.css.map": "/supper-bus-ticker/static/css/main.073c9b0a.css.map",
-    "main.e6ac2125.js.map": "/supper-bus-ticker/static/js/main.e6ac2125.js.map",
+    "main.4b997d19.js.map": "/supper-bus-ticker/static/js/main.4b997d19.js.map",
     "787.eebb2670.chunk.js.map": "/supper-bus-ticker/static/js/787.eebb2670.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.e6ac2125.js"
+    "static/js/main.4b997d19.js"
   ]
 }
