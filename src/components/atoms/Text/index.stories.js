@@ -1,11 +1,8 @@
-// Button.stories.js|jsx
-
 import React from 'react';
-
 import Text from '.';
 
 export default {
-  title: 'Component/Text',
+  title: 'Component/atoms/Text',
   component: Text,
   argTypes: {
     content: {
@@ -40,4 +37,6 @@ export default {
   },
 };
 
-export const Primary = ({content, color, fontFamily, fontWeight, textStyle, size, type}) => <Text type={type} content={content} modifiers={[fontFamily, fontWeight, textStyle, color, size]}/>;
+export const Primary = ({content, color, fontFamily, fontWeight, textStyle, size, type}) => 
+  <Text type={type} content={content} modifiers={[fontFamily, fontWeight, textStyle, color, size]}/>
+   
