@@ -35,7 +35,7 @@ Text.prototype = {
 Text.defaultProps = {
   size: '16x24',
   // content: 'text',
-  modifiers: ['600', 'italic', 'fontRoboto', '16x24', 'black', '400'],
+  modifiers: ['600', 'fontRoboto', '16x24', 'black', '400'],
   type: 'p',
   children: 'text',
 };
