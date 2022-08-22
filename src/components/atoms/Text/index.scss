@@ -4,6 +4,10 @@
     @include style-general();
     @include style-font();
 
+    &-12x18 {
+        @include font-base(12, 18);
+    }
+
     &-14x18 {
         @include font-base(14, 18);
 

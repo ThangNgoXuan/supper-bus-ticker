@@ -1,0 +1,55 @@
+.a-input {
+    $root: &;
+    position: relative;
+    
+    &_label {
+        margin-bottom: rem(6);
+        cursor: pointer;
+    }
+
+    &_wrap {
+        position: relative;
+        border: rem(1) solid $cool-black;
+        border-radius: rem(4);
+    }
+
+    &_input {
+        border-radius: rem(4);
+        @include adjust-flex();
+        background-color: $white;
+        width: 100%;
+        height: rem(60);
+        outline: none;
+        font-family: $font-roboto;
+        color: $davys-grey;
+        transition: all $transition-long ease-in;
+        @include font-base(16, 24);
+        outline: none;
+        border: 0;
+        padding: rem(16) rem(20);
+        @include max-desktop-down {
+            height: rem(48);
+            padding: rem(12) rem(16);
+            @include font-base(12, 16);
+        }
+
+        &::placeholder {
+            color: $davys-grey;
+        }
+    }
+
+    &_messageError {
+        margin-top: rem(4);
+    }
+
+    &-error {
+        #{$root}_wrap {
+            border: rem(1) solid $electric-crimson;
+            box-shadow: none;
+        }
+        #{$root}_input,   
+        #{$root}_input::placeholder {
+            color: $electric-crimson;
+        }
+    }
+}
