@@ -1,0 +1,44 @@
+.a-button {
+    $root: &;
+    box-sizing: border-box;
+    outline: 0;
+    overflow: hidden;
+    padding: rem(12) rem(32);
+    width: 100%;
+    @include font-base(16, 24);
+    @include adjust-flex();
+    @include transition(all $transition ease-in-out);
+    @include reset-button();
+    background-color:$dark-midnight-blue;
+    color: $white;
+    border-radius: rem(5);
+
+    &-xs {
+        padding: rem(8) rem(20);
+    }
+
+    &-lg {
+        padding: rem(20) rem(36);
+    }
+
+    &-primary {
+        box-shadow: 0 rem(4) rem(12) $davys-grey;
+        background-color:$indian-yellow;
+    }
+
+    &-secondary {
+        background-color: $electric-crimson;
+        color: $white;
+    }
+
+    &-disabled {
+        opacity: 0.7;
+        cursor: no-drop;
+        background-color: $spanish-gray;
+        color: $davys-grey;
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
