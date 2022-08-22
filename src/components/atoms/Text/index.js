@@ -28,7 +28,7 @@ Text.prototype = {
   content: PropTypes.string,
   // eslint-disable-next-line
   modifiers: PropTypes.array[FontFamily, FontWeight, TextStyle, ColorStyle, Size],
-  type: PropTypes.oneOf(Type),
+  type: PropTypes.oneOfType(Type),
   children: PropTypes.string,
 }
 
