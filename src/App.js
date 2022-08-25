@@ -1,11 +1,11 @@
 import './App.scss';
-import Text from './components/atoms/Text/index';
+import Header from './components/organisms/Header';
 
 function App() {
   return (
-    <div className="App">
-      <Text content='bus-ticket' modifiers={['center', '500', '80x88', 'coolBlack', 'uppercase']}/>
-    </div>
+    <>
+      <Header/>
+    </>
   );
 }
 
