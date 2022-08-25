@@ -51,4 +51,8 @@
     &-logo {
         @include aspect-ratio(93, 73);
     }
+
+    &-128x48 {
+        @include aspect-ratio(128, 48);
+    }
 }

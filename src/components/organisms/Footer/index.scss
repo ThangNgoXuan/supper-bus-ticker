@@ -1,0 +1,85 @@
+.o-footer {
+    width: 100%;
+
+    &_before {
+        background-color: $cool-black;
+        padding: rem(10) rem(80);
+        display: flex;
+
+        @include tablet-down {
+            padding: rem(8) rem(40);
+        }
+    
+        @include mobile-down {
+            flex-direction: column;
+            padding: rem(20);
+        }
+
+        &_ministry {
+            width: calc(100% / 3);
+            flex: 0 0 calc(100% /3);
+            padding-right: rem(20);
+
+
+            @include mobile-down {
+                width: 100%;
+                flex: 100%;
+                padding: 0;
+            }
+
+            .a-image {
+                width: rem(128);
+            }
+
+            .a-text {
+                margin-top: rem(12);
+            }
+        }
+
+        &_info {
+            width: calc(100% / 3);
+            flex: 0 0 calc(100% /3);
+            padding-right: rem(20);
+
+            @include mobile-down {
+                width: 100%;
+                flex: 100%;
+                margin-top: rem(8);
+                padding: 0;
+            }
+
+            .a-image {
+                width: rem(100);
+            }
+
+        }
+
+        &_listContact {
+            list-style: none;
+            margin-top: rem(16);
+        }
+
+        &_listItem {
+            margin-top: rem(12);
+        }
+
+        &_map {
+            width: calc(100% / 3);
+            flex: 0 0 calc(100% /3);
+
+            .a-image {
+                max-width: rem(400);
+            }
+
+            @include mobile-down {
+                width: 100%;
+                flex: 100%;
+                margin-top: rem(8);
+            }   
+        }
+    }
+
+    &_after {
+        padding: rem(10);
+    }
+}
