@@ -1,9 +1,10 @@
 .o-footer {
     width: 100%;
+    border-bottom: rem(1) solid $spanish-gray;
 
     &_before {
         background-color: $cool-black;
-        padding: rem(10) rem(80);
+        padding: rem(40) rem(80);
         display: flex;
 
         @include tablet-down {

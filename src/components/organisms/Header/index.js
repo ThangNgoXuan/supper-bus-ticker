@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <div className='o-header'>
         <div className='o-header_left'>
-            <Image ratio="logo" imgSrc="https://picsum.photos/93/73"/>
+            <Image ratio="logo" imgSrc="https://picsum.photos/200/300" />
         </div>
         <div className='o-header_right'>
             <ul className='o-header_menu'>

@@ -6,6 +6,9 @@
     left: 0;
     right: 0;
     height: $height-header-desktop;
+    box-shadow: 0 0 rem(4) $spanish-gray;
+    z-index: $z-1;
+    background-color: $white;
 
     @include mobile-down {
         padding: rem(8) rem(20);

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import mapModifiers from '../../../utils/functions';
 
-const Ratio = ['1x1', '4x3', '16x9', '2x1', 'logo', '128x48'];
+const Ratio = ['1x1', '4x3', '16x9', '2x1', 'logo', '128x48', '1530x380'];
 const SizeImageType = ['cover' | 'contain' | 'inherit'];
 
 export default function Image({ratio, imgSrc, alt, imgType}) {
@@ -22,7 +22,6 @@ Image.prototype = {
 
 Image.defaultProps = {
     ratio: '1x1',
-    imgSrc: 'https://picsum.photos/500/500',
     alt: 'img-alt',
     imgType: 'cover',
 }
