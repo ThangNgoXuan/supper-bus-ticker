@@ -1,0 +1,97 @@
+.o-header {
+    @include adjust-flex(space-between, center);
+    padding: rem(10) rem(86);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $height-header-desktop;
+
+    @include mobile-down {
+        padding: rem(8) rem(20);
+    }
+
+    &_left {
+        width: rem(93);
+    }
+
+    &_menu {
+        display: flex;
+        list-style: none;
+    
+        &_item {
+            margin-left: rem(40);
+
+            &:first-child {
+                margin-right: 0;
+            }
+        }
+
+        @include mobile-down {
+            display: none;
+        }
+    }
+
+    &_menuButton {
+        display: none;
+        width: rem(32);
+        height: rem(32);
+        cursor: pointer;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    
+        @include mobile-down {
+            display: block;
+        }
+    }
+
+    &_menuMobile {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 70%;
+        background-color: $deep-koamaru;
+        transform: translateX(100%);
+        transition: all $transition;
+
+        &-open{
+            transform: translateX(0);
+            transition: all $transition;
+        }
+
+        &_buttonClose {
+            margin-top: rem(12);
+            margin-left: rem(12);
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            
+            svg {
+                width: 100%;
+                height: 100%;
+                color: $white;
+            }
+        }
+
+        &_list {
+            margin-top: rem(22);
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+        }
+
+        &_item {
+            padding: rem(10) rem(32);
+            border-bottom: rem(1) solid $white05;
+            
+            .a-text {
+                text-align: left;
+            }
+        }
+    }
+
+}
