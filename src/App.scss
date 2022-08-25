@@ -12,12 +12,26 @@
 @import './components/atoms/Input/index.scss';
 @import './components/atoms/Link/index.scss';
 
-
 //molecules
 @import './components/molecules/Pulldown/index.scss';
 
 //organisms
 @import './components/organisms/Header/index.scss';
 @import './components/organisms/Footer/index.scss';
+@import './components/organisms/HeroBanner/index.scss';
 
-//template
+//pages
+@import './pages/AboutUs/index.scss';
+@import './pages/Contact/index.scss';
+@import './pages/Home/index.scss';
+@import './pages/News/index.scss';
+@import './pages/Recruit/index.scss';
+@import './pages/Schedule/index.scss';
+@import './pages/NotFound/index.scss';
+
+
+
+//css
+.app_content {
+    margin-top: $height-header-desktop;
+}

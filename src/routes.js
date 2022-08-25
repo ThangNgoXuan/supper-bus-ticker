@@ -8,10 +8,6 @@ const routerPage = [
         label: 'Lịch trình',
     },
     { 
-        path: '/ve-chung-toi',
-        label: 'Về chúng tôi',
-    },
-    { 
         path: '/tuyen-dung',
         label: 'Tuyển dụng',
     },
@@ -22,7 +18,11 @@ const routerPage = [
     { 
         path: '/tin-tuc',
         label: 'Tin tức',
-    }
+    },
+    { 
+        path: '/ve-chung-toi',
+        label: 'Về chúng tôi',
+    },
 ];
 
 export default routerPage;
