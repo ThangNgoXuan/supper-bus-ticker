@@ -1,0 +1,44 @@
+.o-topDestinations {
+    margin-top: rem(56);
+    padding: 0 rem(44);
+
+    &_description {
+        margin-top: rem(8);
+    }
+
+    &_carouselWrap {
+        margin-top: rem(16);
+
+        .slick-slider {
+            margin: 0 rem(-16);
+        }
+
+        &_item {
+            padding: 0 rem(10);
+            position: relative;
+
+            .a-image {
+                border-radius: rem(5);
+            }
+
+            .a-text {
+                position: absolute;
+                bottom: rem(12);
+                left: rem(28);
+            }
+        }
+
+        .slick-arrow {
+            background-color: $white;
+            z-index: $z-1;
+            box-shadow: 0 0 rem(7) rem(-4) $black;
+            width: rem(56);
+            height: rem(56);
+            border-radius: 50%;
+
+            &::before {
+                color: $black;
+            }
+        }
+    }
+}
