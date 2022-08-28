@@ -79,7 +79,7 @@ export default function TopDestination() {
   return (
     <div className="o-topDestinations">
       <div className="o-topDestinations_title">
-        <Text modifiers={["24x30", "raisinBlack", "600", 'coolBlack']}>{title}</Text>
+        <Text modifiers={["24x30", "raisinBlack", "600", 'coolBlack', 'uppercase']}>{title}</Text>
       </div>
       <div className="o-topDestinations_description">
         <Text modifiers={["16x24", "davysGrey", "400"]}>{description}</Text>

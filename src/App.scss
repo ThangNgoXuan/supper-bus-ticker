@@ -37,4 +37,5 @@
 //css
 .app_content {
     margin-top: $height-header-desktop;
+    min-height: calc(100vh - $height-header-desktop - 560px);
 }

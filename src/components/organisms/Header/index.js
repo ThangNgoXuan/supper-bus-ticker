@@ -10,6 +10,9 @@ import mapModifiers from '../../../utils/functions';
 
 export default function Header() {
     const [open, setOpen] = useState(false);
+    const [choose, setChoose ] = useState(routerPage[0].path);
+
+    console.log(choose)
 
     const handleClose = () => {
         setOpen(false)
@@ -22,13 +25,15 @@ export default function Header() {
   return (
     <div className='o-header'>
         <div className='o-header_left'>
-            <Image ratio="logo" imgSrc="https://picsum.photos/200/300" />
+           <Link href="/">
+           <Image ratio="logo" imgSrc="https://picsum.photos/200/300" />
+           </Link>
         </div>
         <div className='o-header_right'>
             <ul className='o-header_menu'>
                 {routerPage.map((item,index) => (
                     <Link href={item.path}>
-                        <li className='o-header_menu_item' key={`menu-item-${index}`}>
+                        <li className={mapModifiers('o-header_menu_item', item.path === choose && 'active')} key={`menu-item-${index}`} onClick={() => setChoose(item.path)}>
                             <Text modifiers={['300', 'center']}>{item.label}</Text>
                         </li>
                     </Link>
