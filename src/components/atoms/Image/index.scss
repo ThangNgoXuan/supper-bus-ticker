@@ -70,4 +70,8 @@
     &-224x280 {
         @include aspect-ratio(224, 280);
     }
+
+    &-160x76 {
+        @include aspect-ratio(160, 76);
+    }
 }
