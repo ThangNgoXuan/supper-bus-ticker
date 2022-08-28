@@ -35,9 +35,11 @@
             width: rem(56);
             height: rem(56);
             border-radius: 50%;
+            @include adjust-flex();
 
             &::before {
                 color: $black;
+                @include adjust-flex();
             }
         }
     }
