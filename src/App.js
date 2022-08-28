@@ -17,6 +17,7 @@ function App() {
       <div className="app_content">
         <Routes>
           <Route exact path="/" element={<Home/>}/>
+          <Route exact path="/supper-bus-ticker" element={<Home/>}/>
           <Route exact path="/tin-tuc" element={<News/>}/>
           <Route exact path="/lich-trinh" element={<Schedule/>}/>
           <Route exact path="/ve-chung-toi" element={<AboutUs/>}/>

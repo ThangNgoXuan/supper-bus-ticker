@@ -58,5 +58,16 @@
 
     &-1530x380 {
         @include aspect-ratio(1530, 380);
+        @include tablet-down {
+            @include aspect-ratio(4,3);
+        }
+
+        @include mobile-down {
+            @include aspect-ratio(2,1);
+        }
+    }
+
+    &-224x280 {
+        @include aspect-ratio(224, 280);
     }
 }

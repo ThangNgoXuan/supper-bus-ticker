@@ -44,6 +44,13 @@
         }
     }
 
+    &-24x30 {
+        @include font-base(24, 30);
+        @include mobile-down {
+            @include font-base(20,28);
+        }
+    }
+
     &-80x88 {
         @include font-base(80, 88);
         @include mobile-down {

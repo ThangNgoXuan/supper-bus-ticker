@@ -4,11 +4,11 @@ import mapModifiers from '../../../utils/functions';
 import DOMPurify from 'dompurify';
 
 
-const Size = [ '12x18', '14x18', '14x32', '14x42', '16x24', '80x88', '30x32'];
+const Size = [ '12x18', '14x18', '14x32', '14x42', '16x24', '80x88', '30x32', '24x30'];
 export const FontFamily = ['fontRoboto', 'fontLato'];
 export const FontWeight = ['100', '200', '300', '400', '500', '600', '700', '800', '900'];
 export const TextStyle = ['uppercase','capitalize','underline','italic','center','justify'];
-export const ColorStyle = ['black', 'red', 'white', 'spanishGray', 'electricCrimson', 'coolBlack'];
+export const ColorStyle = ['black', 'red', 'white', 'spanishGray', 'electricCrimson', 'coolBlack', 'davysGrey', 'raisinBlack'];
 const Type = ['p', 'div', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
 const Text = ({ content, modifiers, type, children}) => {
