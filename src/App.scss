@@ -22,6 +22,8 @@
 @import './components/organisms/TopDestinations/index.scss';
 @import './components/organisms/PopularRoute/index.scss';
 @import './components/organisms/Infomation/index.scss';
+@import './components/organisms/Container/index.scss';
+
 
 //pages
 @import './pages/AboutUs/index.scss';
@@ -36,6 +38,5 @@
 
 //css
 .app_content {
-    margin-top: $height-header-desktop;
-    min-height: calc(100vh - $height-header-desktop - 560px);
+    padding-top: $height-header-desktop;
 }
