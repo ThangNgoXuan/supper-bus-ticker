@@ -10,6 +10,10 @@
     z-index: $z-1;
     background-color: $white;
 
+    @include tablet-down {
+        padding: rem(8) rem(40);
+    }
+
     @include mobile-down {
         padding: rem(8) rem(20);
     }

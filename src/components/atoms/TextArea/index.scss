@@ -1,0 +1,37 @@
+.a-textArea {
+    width: 100%;
+    max-width: 100%;
+    padding: rem(13) rem(16);
+    border: rem(1) solid $cool-black;
+    border-radius: rem(3);
+    outline: none;
+    background-color: $white;
+    color: $davys-grey;
+    @include font-base(14, 21);
+    @include scroll-bars(8, $cool-black, $white, 5, 2);
+    resize: none;
+    &::placeholder {
+        color: $davys-grey;
+    }
+
+    &_wrap {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+    }
+
+    &_errorMes {
+        margin-top: rem(4);
+    }
+
+    &-error {
+        border-color:  $electric-crimson;;
+        color:  $electric-crimson;
+
+        .a-textArea::placeholder {
+            color: $electric-crimson;
+        }
+    }
+
+}

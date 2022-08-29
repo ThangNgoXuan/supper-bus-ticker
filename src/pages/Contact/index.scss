@@ -1,0 +1,123 @@
+.p-contact {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: rem(16);
+    padding-right: rem(16);
+  
+    @include small-mobile-up {
+      max-width: rem(540);
+    }
+  
+    @include mobile-up {
+      max-width: rem(720);
+    }
+  
+    @include tablet-up {
+      max-width: rem(960);
+    }
+  
+    @include desktop-up {
+      max-width: rem(1140);
+    }
+  
+    @include break-min(1366px) {
+      max-width: 1366px;
+      padding-left: rem(120);
+      padding-right: rem(120);
+    }
+
+    &_title {
+        margin-top: rem(60);
+    }
+
+    &_description {
+        margin-top: rem(16);
+    }
+
+    &_contentWrap {
+        display: flex;
+        margin-top: rem(16);
+
+        @include mobile-down {
+            flex-direction: column-reverse;
+        }
+
+        &_left {
+            width: 100%;
+            max-width: 50%;
+            flex: 0 0 50%;
+            padding: rem(8);
+            padding-right: rem(60);
+
+            @include tablet-down {
+                padding-right: rem(20);
+            }
+
+            @include mobile-down {
+                max-width: 100%;
+                flex: 0 0 100%;
+                padding-right: rem(8);
+
+            }
+        }
+
+        &_right {
+            width: 100%;
+            max-width: 50%;
+            flex: 0 0 50%;
+            padding: rem(8);
+
+            @include mobile-down {
+                max-width: 100%;
+                flex: 0 0 100%;
+            }
+        }
+    }
+
+    &_information {
+
+        &_title {
+            margin-top: rem(28);
+        }
+
+        &_description {
+            margin-top: rem(16);
+        }
+    }
+
+    &_form {
+        padding: rem(38);
+        border-radius: rem(12);
+        box-shadow: 0 0 rem(4) $spanish-gray;
+
+        .a-text {
+            padding-left: rem(12);
+        }
+
+        &_field {
+            display: flex;
+
+            .a-input {
+                padding: rem(12);
+                width: 100%;
+            }
+        }
+
+        &_fieldTextArea {
+            padding: rem(12);
+            .a-textArea {
+                width: 100%;
+            }
+        }
+
+        &_button {
+            padding: rem(8);
+
+            .a-button {
+                width: fit-content;
+                margin: 0 auto;
+            }
+        }
+    }
+
+}
