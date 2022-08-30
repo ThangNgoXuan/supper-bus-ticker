@@ -10,7 +10,7 @@ import mapModifiers from '../../../utils/functions';
 
 export default function Header() {
     const [open, setOpen] = useState(false);
-    const [choose, setChoose ] = useState(routerPage[0].path);
+    const [choose, setChoose ] = useState(routerPage[0].label);
 
     console.log(choose)
 
@@ -33,7 +33,7 @@ export default function Header() {
             <ul className='o-header_menu'>
                 {routerPage.map((item,index) => (
                     <Link href={item.path}>
-                        <li className={mapModifiers('o-header_menu_item', item.path === choose && 'active')} key={`menu-item-${index}`} onClick={() => setChoose(item.path)}>
+                        <li className={mapModifiers('o-header_menu_item', item.label === choose && 'active')} key={`menu-item-${index}`} onClick={() => setChoose(item.label)}>
                             <Text modifiers={['300', 'center']}>{item.label}</Text>
                         </li>
                     </Link>

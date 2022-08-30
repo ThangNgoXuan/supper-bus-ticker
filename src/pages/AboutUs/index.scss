@@ -1,7 +1,19 @@
 .p-aboutUs {
-    margin-top: rem(60);
+    margin: rem(60) 0;
+
+    @include tablet-down {
+        margin: rem(40) 0;
+    }
+
+    @include mobile-down {
+        margin: rem(20) 0;
+    }
 }
 
 .p_aboutUs_content {
-    margin-top: rem(40)
+    margin-top: rem(40);
+
+    @include mobile-down {
+        margin-top: rem(40);
+    }
 }

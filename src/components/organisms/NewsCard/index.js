@@ -4,7 +4,7 @@ import Text from "../../atoms/Text";
 import Image from "../../atoms/Image";
 import Link from "../../atoms/Link";
 
-export default function NewsCard({ title, description, link, time, imgSrc }) {
+export default function NewsCard({ title, more, link, time, imgSrc }) {
   return (
     <div className="o-newsCard">
       <Link href={link}>
@@ -17,7 +17,7 @@ export default function NewsCard({ title, description, link, time, imgSrc }) {
             <Text modifiers={["28x32", "oxfordBlue", "400"]}>{title}</Text>
           </div>
           <div className="o-newsCard_description">
-            <Text modifiers={["16x34", "electricCrimson", "400"]}>{description}</Text>
+            <Text modifiers={["16x34", "electricCrimson", "400"]}>{more}</Text>
           </div>
         </div>
       </Link>
