@@ -12,7 +12,7 @@ const dataJob = new Array(10).fill({
   time: "30/08/2022",
   salary: "8",
   position: "Ho Chi Minh",
-  link: 'https://google.com',
+  link: '/cong-viec-chi-tiet',
 });
 
 export default function Recruit() {

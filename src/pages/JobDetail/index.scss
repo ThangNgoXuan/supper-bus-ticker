@@ -1,0 +1,105 @@
+.p-jobDetail {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: rem(16);
+    padding-right: rem(16);
+
+    @include small-mobile-up {
+      max-width: rem(540);
+    }
+
+    @include mobile-up {
+      max-width: rem(720);
+    }
+
+    @include tablet-up {
+      max-width: rem(960);
+    }
+
+    @include desktop-up {
+      max-width: rem(1140);
+    }
+
+    @include break-min(1366px) {
+      max-width: 1366px;
+      padding-left: rem(120);
+      padding-right: rem(120);
+    }
+
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+
+    @include tablet-down {
+      padding-top: rem(60);
+      padding-bottom: rem(60);
+    }
+
+    @include mobile-down {
+      padding-top: rem(40);
+      padding-bottom: rem(40);
+    }
+
+    &_description {
+        margin-top: rem(36);
+        .a-text {
+            padding-top: rem(12);
+        }
+    }
+
+    &_required {
+        margin-top: rem(22);
+        padding-top: rem(12);
+
+        .a-text {
+            padding-top: rem(12);
+        }
+    }
+
+    &_recruitment {
+        @include adjust-flex(space-between, center);
+        padding-top: rem(32);
+
+        &_span {
+            height: rem(8);
+            width: 30%;
+            background-color: $cool-black;
+
+            @include mobile-down {
+                width: 25%;
+            }
+        }
+    }
+
+    &_formWrap {
+        &_form {
+            padding: rem(20);
+        }
+
+        &_field {
+            width: 100%;
+            display: flex;
+
+            .a-input {
+                padding: rem(8);
+                width: 100%;
+            }
+        }
+
+        &_upload {
+            padding: rem(8);
+
+            .a-text {
+                margin-bottom: rem(12);
+            }
+            .a-input {
+                border: unset;
+            }
+        }
+
+        &_button {
+            margin-top: rem(32);
+        }
+
+
+    }
+}
