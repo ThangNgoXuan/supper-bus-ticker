@@ -54,8 +54,9 @@
             max-height: rem(800);
             overflow-y: auto;
             @include scroll-bars();
+            padding: rem(20) 0;
         }
-        
+
         &_thead {
             min-width: 100%;
 
@@ -68,7 +69,7 @@
 
         &_tbody {
             &_th {
-                width: calc(100% / 6);  
+                width: calc(100% / 6);
                 .a-button {
                     width: fit-content;
                     margin: 0 auto;

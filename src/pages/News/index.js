@@ -1,4 +1,5 @@
 import React from 'react'
+import { AiOutlineClockCircle } from "react-icons/ai";
 import Image from '../../components/atoms/Image';
 import Link from '../../components/atoms/Link';
 import Text from '../../components/atoms/Text'
@@ -9,7 +10,7 @@ const dataNews = new Array(7).fill({
   title: 'Bài viết 1',
   more: 'Xem thêm',
   time: "10/20/2022",
-  link: "https://google.com",
+  link: "/tin-chi-tiet",
   imgSrc: 'https://picsum.photos/425/285',
   description: "Nôi dung bài viet môt"
 })
@@ -26,7 +27,7 @@ export default function News() {
           <Image imgSrc={dataNews[0].imgSrc} ratio="895x590"/>
           <div className='p-news_fistNews'>
             <div className='p-news_fistNews_time'>
-              <Text modifiers={["16x20", "dimGray", "400"]}>{dataNews[0].time}</Text>
+              <AiOutlineClockCircle/><Text modifiers={["16x20", "dimGray", "400"]}>{dataNews[0].time}</Text>
             </div>
             <div className='p-news_fistNews_title'>
               <Text modifiers={["28x32", "oxfordBlue", "400"]}>{dataNews[0].title}</Text>

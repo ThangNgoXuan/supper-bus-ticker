@@ -117,5 +117,13 @@
     &_more {
       margin-top: rem(20);
     }
+
+    &_time {
+      @include adjust-flex(flex-start, center);
+
+      svg {
+        margin-right: rem(8);
+      }
+    }
   }
 }

@@ -9,10 +9,10 @@ const title = "Tìm chuyến xe";
 const dataList = new Array(20).fill({
   addressFrom: "Hồ Chí Minh",
   addressEnd: [
-    { address: "Hà Nội", time: "8", km: "300", type: "Giường" },
-    { address: "Hà Nội", time: "8", km: "300", type: "Giường" },
-    { address: "Hà Nội", time: "8", km: "300", type: "Giường" },
-    { address: "Hà Nội", time: "8", km: "300", type: "Giường" },
+    { address: "Hà Nội", time: "8", km: "300", type: "Giường", linkDetail: 'https://google.com', linkBook: "https://google.com" },
+    { address: "Hà Nội", time: "8", km: "300", type: "Giường", linkDetail: 'https://google.com', linkBook: "https://google.com" },
+    { address: "Hà Nội", time: "8", km: "300", type: "Giường", linkDetail: 'https://google.com', linkBook: "https://google.com" },
+    { address: "Hà Nội", time: "8", km: "300", type: "Giường", linkDetail: 'https://google.com', linkBook: "https://google.com" },
   ],
 });
 
@@ -67,8 +67,8 @@ export default function Schedule() {
                         <th className="p-schedule_table_tbody_th">{ele.type}</th>
                         <th className="p-schedule_table_tbody_th">{ele.km}</th>
                         <th className="p-schedule_table_tbody_th">{ele.time}</th>
-                        <th className="p-schedule_table_tbody_th"><Link><Text modifiers={['coolBlack']}>Chi tiết</Text></Link></th>
-                        <th className="p-schedule_table_tbody_th"><Link><Button><Text modifiers={['white']}>Đặt vé</Text></Button></Link></th>
+                        <th className="p-schedule_table_tbody_th"><Link href={ele.linkDetail}><Text modifiers={['coolBlack']}>Chi tiết</Text></Link></th>
+                        <th className="p-schedule_table_tbody_th"><Link href={ele.linkBook}><Button><Text modifiers={['white']}>Đặt vé</Text></Button></Link></th>
                       </tr>
                     ))}
                   </tbody>

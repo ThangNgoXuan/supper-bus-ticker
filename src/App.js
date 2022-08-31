@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import Recruit from "./pages/Recruit";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import NewsDetail from "./pages/NewsDetail";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/ve-chung-toi" element={<AboutUs/>}/>
           <Route exact path="/tuyen-dung" element={<Recruit/>}/>
           <Route exact path="/lien-he" element={<Contact/>}/>
+          <Route exact path="/tin-chi-tiet" element={<NewsDetail/>}/>
           <Route path="/*" element={<NotFound />}/>
         </Routes>
       </div>
