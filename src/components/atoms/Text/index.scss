@@ -65,6 +65,20 @@
         }
     }
 
+    &-15x42 {
+        @include font-base(15, 42);
+        @include mobile-down {
+            @include font-base(14,32);
+        }
+    }
+
+    &-16x42 {
+        @include font-base(16, 42);
+        @include mobile-down {
+            @include font-base(14,32);
+        }
+    }
+
     &-22x52 {
         @include font-base(22, 52);
         @include mobile-down {
@@ -79,7 +93,6 @@
         }
     }
 
-    
     &-52x68 {
         @include font-base(52, 68);
         @include tablet-down {

@@ -9,10 +9,10 @@ const title = "Tìm chuyến xe";
 const dataList = new Array(20).fill({
   addressFrom: "Hồ Chí Minh",
   addressEnd: [
-    { address: "Hà Nội", time: "8", km: "300", type: "Giường", linkDetail: 'https://google.com', linkBook: "https://google.com" },
-    { address: "Hà Nội", time: "8", km: "300", type: "Giường", linkDetail: 'https://google.com', linkBook: "https://google.com" },
-    { address: "Hà Nội", time: "8", km: "300", type: "Giường", linkDetail: 'https://google.com', linkBook: "https://google.com" },
-    { address: "Hà Nội", time: "8", km: "300", type: "Giường", linkDetail: 'https://google.com', linkBook: "https://google.com" },
+    { address: "Hà Nội", time: "8", km: "300", type: "Giường", linkDetail: '/chi-tiet-chuyen-xe', linkBook: "/dat-ve" },
+    { address: "Hà Nội", time: "8", km: "300", type: "Giường", linkDetail: '/chi-tiet-chuyen-xe', linkBook: "/dat-ve" },
+    { address: "Hà Nội", time: "8", km: "300", type: "Giường", linkDetail: '/chi-tiet-chuyen-xe', linkBook: "/dat-ve" },
+    { address: "Hà Nội", time: "8", km: "300", type: "Giường", linkDetail: '/chi-tiet-chuyen-xe', linkBook: "/dat-ve" },
   ],
 });
 

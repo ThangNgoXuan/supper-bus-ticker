@@ -1,0 +1,130 @@
+.p-scheduleDetail {
+    padding: rem(60);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: rem(16);
+  padding-right: rem(16);
+
+  @include small-mobile-up {
+    max-width: rem(540);
+  }
+
+  @include mobile-up {
+    max-width: rem(720);
+  }
+
+  @include tablet-up {
+    max-width: rem(960);
+  }
+
+  @include desktop-up {
+    max-width: rem(1140);
+  }
+
+  @include break-min(1366px) {
+    max-width: 1366px;
+    padding-left: rem(120);
+    padding-right: rem(120);
+  }
+
+  &_stopPoint {
+    width: 100%;
+
+    &_table {
+        width: 100%;
+        border: rem(1) solid $black016;
+        border-collapse: collapse;
+        border-radius: rem(5);
+    }
+
+    &_thead {
+        .a-text {
+            padding-left: rem(8);
+        }
+    }
+
+    &_tr {
+        border-top: rem(1) solid $black016;
+        transition: $transition;
+
+        &:nth-child(2n) {
+            background-color: $cool-black05;
+        }
+
+        &:hover {
+            background-color: $black016;
+        }
+    }
+
+    &_th {
+        width: 70%;
+
+        &:first-child {
+            width: 30%;
+        }
+    }
+
+    &_thead {
+        width: 100%;
+    }
+  }
+
+  &_detail {
+    margin-top: rem(42);
+    border: rem(1) solid $black016;
+    border-radius: rem(5);
+
+    &_name {
+        padding: rem(8);
+    }
+
+    &_body {
+        display: flex;
+        border: rem(1) solid $black016;
+    }
+
+    &_tableDetail {
+        border-right: rem(1) solid $black016;
+        width: 100%;
+        max-width: 60%;
+        flex: 0 0 60%;
+
+        &_table {
+            width: 100%;
+
+            &_th {
+                width: 30%;
+
+                &:last-child {
+                    width: 70%;
+                }
+            }
+        }
+    }
+
+    &_time {
+        width: 100%;
+        max-width: 40%;
+        flex: 0 0 40%;
+    }
+  }
+
+  &_time {
+    &_chooseTime {
+        padding: rem(8);
+        @include adjust-flex(flex-start, center);
+
+        .a-text {
+            margin-left: rem(12);
+        }
+    }
+
+    &_table {
+        border-top: rem(1) solid $black016;
+
+        &_th {
+            width: 25%;
+        }
+    }
+  }
+}
