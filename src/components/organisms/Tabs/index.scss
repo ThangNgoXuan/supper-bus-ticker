@@ -1,0 +1,61 @@
+.o-tabs {
+    $root: &;
+    width: 100%;
+    display: flex;
+
+    &_labels {
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: relative;
+        width: 100%;
+        @include adjust-flex(center, flex-start);
+        @include scroll-bars(8);
+    }
+
+    &_number {
+        width: rem(24);
+        height: rem(24);
+        border-radius: 50%;
+        transition: $transition;
+        border: rem(2) solid gray;
+        @include adjust-flex(center, center);
+        margin-top: rem(16);
+    }
+
+    &_label {
+        transition: all $transition linear;
+        white-space: nowrap;
+        position: relative;
+        padding-left: rem(16);
+        padding-right: rem(16);
+    }
+
+    &_tab {
+        position: relative;
+        cursor: pointer;
+        padding-top: rem(12);
+        padding-bottom: rem(12);
+        @include adjust-flex(center, center);
+        flex-direction: column;
+
+        @include mobile-down {
+            padding-top: rem(8);
+            padding-bottom: rem(8);
+        }
+
+        &-active {
+            #{$root}_number {
+                border-color: $cool-black;
+            }
+        }
+    }
+
+    &_panel {
+        display: none;
+        margin-top: rem(24);
+
+        &-active {
+            display: block;
+        }
+    }
+}

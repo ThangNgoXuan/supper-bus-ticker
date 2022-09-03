@@ -4,6 +4,7 @@ import {MdDateRange} from 'react-icons/md';
 import Link from "../../components/atoms/Link";
 import Text from "../../components/atoms/Text";
 import HeroBanner from "../../components/organisms/HeroBanner";
+import Pagination from "../../components/organisms/Pagination";
 
 const title = "Các việc làm đang tuyển";
 const total = "Vị trí đang tuyển";
@@ -59,6 +60,9 @@ export default function Recruit() {
             ))}
         </div>
     </div>
+    <div className="p-recruit_pagination">
+        <Pagination totalPage={50} handleChangePage={() => console.log(1)} />
+      </div>
     </>
   );
 }

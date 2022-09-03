@@ -1,0 +1,74 @@
+.o-pagination {
+    @include adjust-flex;
+    $root: &;
+
+    .main {
+        display: flex;
+    }
+
+    .disabled {
+        display: none;
+    }
+
+    .page {
+        background: transparent;
+        border: 0;
+        box-sizing: border-box;
+        cursor: pointer;
+        height: rem(30);
+        list-style-type: none;
+        padding: 0 rem(8);
+        min-width: fit-content;
+        overflow: hidden;
+  
+        .link-page {
+            @include adjust-flex;
+            @include font-base(24, 28);
+            color: $cool-black;
+            height: 100%;
+            outline: none;
+            padding: 0;
+            width: 100%;
+            transform: scale(1);
+            @include max-desktop-down {
+                @include font-base(18, 22);
+            }
+            @include break-max(1025px) {
+                @include font-base(14, 24);
+            }
+        }
+
+        .link-break {
+            align-items: flex-end;
+        }
+    }
+
+    .pageLabel {
+        .link-page {
+            &::after {
+                content: ',';
+            }
+        }
+
+        &:nth-last-child(2) {
+            .link-page {
+                &::after {
+                    content: '';
+                }
+            }
+        }
+    }
+
+    .active-page {
+        .link-page {
+            font-weight: bold;
+            transform: scale(1.4);
+            transition: all $transition-long linear;
+
+            &::after {
+                content: ',';
+                transform: scale(0.6);
+            }
+        }
+    }
+}

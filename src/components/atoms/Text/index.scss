@@ -23,6 +23,10 @@
         }
     }
 
+    &-12x14 {
+        @include font-base(12, 14);
+    }
+
     &-14x42 {
         @include font-base(14, 42);
         @include mobile-down {

@@ -39,4 +39,3 @@ export default {
 
 export const Primary = ({content, color, fontFamily, fontWeight, textStyle, size, type}) => 
   <Text type={type} content={content} modifiers={[fontFamily, fontWeight, textStyle, color, size]}/>
-   
