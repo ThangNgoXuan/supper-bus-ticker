@@ -13,6 +13,7 @@ import NewsDetail from "./pages/NewsDetail";
 import JobDetail from "./pages/JobDetail";
 import BookingTicket from "./pages/BookingTicket";
 import ScheduleDetail from "./pages/ScheduleDetail";
+import Position from "./pages/Position";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/cong-viec-chi-tiet" element={<JobDetail/>}/>
           <Route exact path="/dat-ve" element={<BookingTicket/>}/>
           <Route exact path="/chi-tiet-chuyen-xe" element={<ScheduleDetail/>}/>
+          <Route exact path="/vi-tri-xe" element={<Position/>}/>
           <Route path="/*" element={<NotFound />}/>
         </Routes>
       </div>

@@ -1,33 +1,179 @@
 .p-bookingTicket {
-    margin-left: auto;
-    margin-right: auto;
-    padding: rem(60) 0;
-    padding-left: rem(16);
-    padding-right: rem(16);
+  margin-left: auto;
+  margin-right: auto;
+  padding: rem(60) 0;
+  padding-left: rem(80);
+  padding-right: rem(80);
 
-    @include small-mobile-up {
-      max-width: rem(540);
+  @include small-mobile-up {
+    max-width: rem(540);
+  }
+
+  @include mobile-up {
+    max-width: rem(720);
+  }
+
+  @include tablet-up {
+    max-width: rem(960);
+  }
+
+  @include desktop-up {
+    max-width: rem(1140);
+  }
+
+  @include break-min(1366px) {
+    max-width: 1366px;
+    padding-left: rem(120);
+    padding-right: rem(120);
+  }
+
+  &_tabs {
+    margin-top: rem(40);
+  }
+
+  &_schedule {
+    @include adjust-flex(space-evenly, center);
+    border-radius: rem(12);
+    box-shadow: 0 rem(4) rem(12) $davys-grey;
+    padding: rem(20);
+
+    &_item {
+      border: rem(1) solid $black016;
+      border-radius: rem(12);
+      padding: rem(12);
+
+      .a-text {
+        margin-bottom: rem(12);
+      }
+    }
+  }
+
+  &_route {
+    &_pulldown {
+      display: flex;
+      padding-left: rem(100);
+
+      &_item {
+        padding-right: rem(32);
+      }
     }
 
-    @include mobile-up {
-      max-width: rem(720);
+    &_routes {
+      margin-top: rem(40);
     }
 
-    @include tablet-up {
-      max-width: rem(960);
+    &_button {
+      margin-top: rem(40);
+      @include adjust-flex(center, center);
+
+      .a-button {
+        margin-left: rem(40);
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &_item {
+    padding: rem(20);
+    border: rem(1) solid $black016;
+    border-radius: rem(12);
+    box-shadow: 0 rem(4) rem(12) $davys-grey;
+    margin-top: rem(40);
+
+    &_time {
+      @include adjust-flex(flex-start, center);
+
+      .a-text {
+        padding: 0 rem(20);
+
+        &:first-child {
+          padding-left: 0
+        }
+      }
     }
 
-    @include desktop-up {
-      max-width: rem(1140);
+    &_typeWrap {
+      @include adjust-flex(space-between, center);
+      padding-right: rem(40)
     }
 
-    @include break-min(1366px) {
-      max-width: 1366px;
-      padding-left: rem(120);
-      padding-right: rem(120);
+    &_type {
+      @include adjust-flex(flex-start, center);
+      margin-top: rem(8);
+      background-color: $anti-flash-white;
+      border-radius: rem(5);
+      width: fit-content;
+      padding: rem(8);
+
+      .a-text {
+        padding: rem(8);
+      }
     }
 
-    &_tabs {
-        margin-top: rem(40);
+    &_choose {
+      @include adjust-flex(center, center);
+      flex-direction: column;
     }
+
+    &_chairWrap {
+      padding: rem(40);
+      background-color: $ghost-white;
+      border: rem(1) solid $black016;
+      border-radius: rem(8);
+      margin: rem(20) auto;
+      display: flex;
+
+      &_chair {
+        @include adjust-flex(center,center);
+        flex-direction: column;
+        width: rem(40);
+        height: rem(40);
+        position: relative;
+        color: $jet;
+        transition: $transition;
+        &:hover {
+          color: $cool-black;
+        }
+
+        svg {
+          width: rem(40);
+          height: rem(40);
+
+        }
+
+        .a-text {
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%)
+        }
+      }
+    }
+
+    &_statusWrap {
+      @include adjust-flex(space-evenly, center);
+    }
+
+    &_seleted {
+      @include adjust-flex(center, center);
+
+      div {
+        width: rem(20);
+        height: rem(20);
+        margin-right: rem(8);
+        border-radius: rem(4);
+        border: rem(1) solid jet;
+        background-color: $dim-gray;
+      }
+    }
+
+    &_notyet {
+      div {
+        background-color: $cool-black;
+      }
+    }
+  }
 }
