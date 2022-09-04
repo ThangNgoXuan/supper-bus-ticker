@@ -27,10 +27,6 @@
     padding-right: rem(120);
   }
 
-  &_tabs {
-    margin-top: rem(40);
-  }
-
   &_schedule {
     @include adjust-flex(space-evenly, center);
     border-radius: rem(12);
@@ -51,10 +47,13 @@
   &_route {
     &_pulldown {
       display: flex;
-      padding-left: rem(100);
 
       &_item {
-        padding-right: rem(32);
+        width: rem(200);
+
+        &:last-child {
+          margin-left: rem(20);
+        }
       }
     }
 
@@ -90,14 +89,14 @@
         padding: 0 rem(20);
 
         &:first-child {
-          padding-left: 0
+          padding-left: 0;
         }
       }
     }
 
     &_typeWrap {
       @include adjust-flex(space-between, center);
-      padding-right: rem(40)
+      padding-right: rem(40);
     }
 
     &_type {
@@ -127,7 +126,7 @@
       display: flex;
 
       &_chair {
-        @include adjust-flex(center,center);
+        @include adjust-flex(center, center);
         flex-direction: column;
         width: rem(40);
         height: rem(40);
@@ -141,14 +140,13 @@
         svg {
           width: rem(40);
           height: rem(40);
-
         }
 
         .a-text {
           position: absolute;
           top: 40%;
           left: 50%;
-          transform: translate(-50%, -50%)
+          transform: translate(-50%, -50%);
         }
       }
     }
@@ -173,6 +171,113 @@
     &_notyet {
       div {
         background-color: $cool-black;
+      }
+    }
+  }
+
+  &_info {
+    display: flex;
+
+    &_form {
+      width: 100%;
+      max-width: 50%;
+      flex: 0 0 50%;
+      padding: rem(16);
+    }
+
+    &_rules {
+      width: 100%;
+      max-width: 50%;
+      flex: 0 0 50%;
+      border: rem(1) solid $black016;
+      padding: rem(16);
+      border-radius: rem(12);
+      margin: rem(16);
+
+      &_ul {
+        list-style: none;
+      }
+
+      &_li {
+        margin: rem(16);
+      }
+    }
+  }
+
+  &_form {
+    padding: rem(20);
+    border: rem(1) solid $black016;
+    border-radius: rem(12);
+
+    &_field {
+      margin-top: rem(12);
+      &:last-child {
+        display: flex;
+        .a-text {
+          margin-right: rem(8);
+        }
+      }
+    }
+  }
+
+  &_payment {
+    border: rem(1) solid $black016;
+    background-color: $cool-black;
+    border-radius: rem(5);
+    margin-bottom: rem(12);
+
+    .a-text {
+      padding: rem(8);
+    }
+
+    &_info {
+      width: 100%;
+      background-color: $white;
+
+      &_body {
+        display: flex;
+        flex-wrap: wrap;
+
+        .a-text {
+          width: 100%;
+          max-width: 50%;
+          flex: 0 0 50%;
+        }
+      }
+    }
+
+    &_chair {
+      background-color: $white;
+      border-top: rem(1) solid $black016;
+    }
+
+    &_type {
+      @include adjust-flex(center, center);
+      background-color: $white;
+      margin-top: rem(20);
+      padding: 0 rem(200);
+
+      &_item {
+        @include adjust-flex(center, center);
+        flex-direction: column;
+        border: rem(1) solid $black016;
+        border-radius: rem(5);
+        padding: rem(16) rem(50);
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+          transform: translateY(rem(-4));
+        }
+
+        &:first-child {
+          margin-right: rem(20);
+        }
+
+        .a-image {
+          width: rem(40);
+          margin-bottom: rem(12);
+        }
       }
     }
   }
