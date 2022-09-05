@@ -4,6 +4,7 @@
   "homepage": "https://ThangNgoXuan.github.io/supper-bus-ticker/",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.7.0",
     "@hookform/resolvers": "^2.9.7",
     "@react-google-maps/api": "^2.12.2",
     "@testing-library/jest-dom": "^5.16.5",

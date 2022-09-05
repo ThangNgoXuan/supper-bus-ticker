@@ -7,6 +7,7 @@ import Input from "../../components/atoms/Input";
 import Button from "../../components/atoms/Button";
 import TextArea from "../../components/atoms/TextArea";
 import contactUsSchema from "../../utils/schema";
+import emailjs from "@emailjs/browser";
 
 const title = "Liên hệ với Bus-ticket chúng tôi";
 const description = "Liên hệ với Bus-ticket chúng tôi";
@@ -27,11 +28,6 @@ const placeholder = {
 
 export default function Contact() {
 
-  const handleSubmit = (data) => {
-    console.log(data);
-    alert("Gửi thành công");
-  }
-
   const method = useForm({
     resolver: yupResolver(contactUsSchema),
     defaultValues: {
@@ -43,6 +39,26 @@ export default function Contact() {
     },
   });
 
+  const sendEmail = (formData) => {
+    alert("Gửi thành công");
+    emailjs
+      .send(
+        "service_a6l4f9j",
+        "template_djn6p03",
+        formData,
+        "poDKqMlfNxjT2hrmm"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    method.reset();
+  };
   return (
     <div className="p-contact">
       <div className="p-contact_title">
@@ -73,7 +89,11 @@ export default function Contact() {
         </div>
         <div className="p-contact_contentWrap_right">
           <FormProvider {...method}>
-            <form className="p-contact_form" onSubmit={method.handleSubmit(handleSubmit)} noValidate>
+            <form
+              className="p-contact_form"
+              onSubmit={method.handleSubmit(sendEmail)}
+              noValidate
+            >
               <Text modifiers={["24x30", "coolBlack", "600", "left"]}>
                 Gửi thông tin liên hệ
               </Text>

@@ -24,7 +24,7 @@ export const jobDetail = yup.object({
     .string()
     .required("Vui lòng nhập số điện thoại")
     .matches(phoneRegExp, "Số điện thoại không hợp lệ"),
-  level: yup.string().required("Vui lòng nhập số năm kinh nghiệm"),
+  position: yup.string().required("Vui lòng nhập vị trí ứng tuyển"),
   email: yup
     .string()
     .email("Địa chỉ email không hợp lệ")

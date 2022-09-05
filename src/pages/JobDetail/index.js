@@ -6,6 +6,7 @@ import UploadFile from "../../components/molecules/UploadFile";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { jobDetail as jobDetailSchema } from "../../utils/schema";
+import emailjs from "@emailjs/browser";
 
 const jobDetail = {
   title: "SPX - Hub Team Leader - Hanoi",
@@ -26,10 +27,10 @@ const jobDetail = {
 };
 
 const placeholder = {
-  name: "Họ và tên",
-  phone: "Số điện thoại",
-  email: "Email",
-  level: "Số năm kinh nghiệm",
+  name: "Họ và tên (*)",
+  phone: "Số điện thoại (*)",
+  email: "Email (*)",
+  position: "Vị trí ứng tuyển (*)",
 };
 
 export default function JobDetail() {
@@ -40,16 +41,31 @@ export default function JobDetail() {
       name: "",
       email: "",
       phone: "",
-      level: "",
+      position: "",
     },
   });
 
-  const handleSubmit = (data) => {
-    console.log(data);
-    method.reset();
+  const sendEmail = (formData) => {
     alert("Gửi thành công");
-  }
+    console.log(formData);
+    emailjs
+      .send(
+        "service_a6l4f9j",
+        "template_f89c9e7",
+        formData,
+        "poDKqMlfNxjT2hrmm"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
 
+    method.reset();
+  };
 
   return (
     <div className="p-jobDetail">
@@ -73,7 +89,7 @@ export default function JobDetail() {
         <FormProvider {...method}>
           <form
             className="p-jobDetail_formWrap_form"
-            onSubmit={method.handleSubmit(handleSubmit)}
+            onSubmit={method.handleSubmit(sendEmail)}
             noValidate
           >
             <div className="p-jobDetail_formWrap_field">
@@ -119,15 +135,15 @@ export default function JobDetail() {
                 )}
               />
               <Controller
-                name="level"
+                name="position"
                 control={method.control}
                 render={({ field, fieldState }) => (
                   <Input
-                    placeholder={placeholder.level}
+                    placeholder={placeholder.position}
                     value={field.value}
                     onChange={field.onChange}
                     error={fieldState.error?.message}
-                    type="number"
+                    type="text"
                   />
                 )}
               />

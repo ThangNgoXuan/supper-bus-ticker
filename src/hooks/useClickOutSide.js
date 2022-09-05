@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+/* eslint-disable */
+import { useEffect } from 'react';
 
 const useClickOutside = ( ref, callback ) => {
   const handleClick = (e)=> {
