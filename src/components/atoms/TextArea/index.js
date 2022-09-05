@@ -4,7 +4,7 @@ import mapModifiers from "../../../utils/functions";
 import Text from "../Text";
 
 const TextAreaRef = (
-  { error, placeholder, name, value, rows },
+  { error, placeholder, name, value, rows, onChange },
   ref
 ) => {
   return (
@@ -16,6 +16,7 @@ const TextAreaRef = (
         value={value}
         rows={rows}
         name={name}
+        onChange={onChange}
       />
 
       {error && (

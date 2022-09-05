@@ -4,6 +4,9 @@ import Image from "../../components/atoms/Image";
 import Input from "../../components/atoms/Input";
 import Button from "../../components/atoms/Button";
 import TextArea from "../../components/atoms/TextArea";
+import { Controller, FormProvider, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import contactUsSchema from "../../utils/schema";
 
 const title = "Liên hệ với Bus-ticket chúng tôi";
 const description = "Liên hệ với Bus-ticket chúng tôi";
@@ -23,10 +26,28 @@ const placeholder = {
 };
 
 export default function Contact() {
+
+  const handleSubmit = (data) => {
+    console.log(data);
+    method.reset();
+    alert("Gửi thành công");
+  }
+
+  const method = useForm({
+    resolver: yupResolver(contactUsSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      content: "",
+      title: "",
+    },
+  });
+
   return (
     <div className="p-contact">
       <div className="p-contact_title">
-        <Text modifiers={["center", "30x32", "coolBlack", "600", 'uppercase']}>
+        <Text modifiers={["center", "30x32", "coolBlack", "600", "uppercase"]}>
           {title}
         </Text>
       </div>
@@ -38,35 +59,103 @@ export default function Contact() {
           <Image imgSrc={content.map} />
           <div className="p-contact_information">
             <div className="p-contact_information_title">
-              <Text modifiers={['24x30', 'coolBlack', '400', 'uppercase']} content={content.title} />
+              <Text
+                modifiers={["24x30", "coolBlack", "400", "uppercase"]}
+                content={content.title}
+              />
             </div>
             <div className="p-contact_information_description">
-              <Text content={content.description} modifiers={['400', '16x24']}/>
+              <Text
+                content={content.description}
+                modifiers={["400", "16x24"]}
+              />
             </div>
           </div>
         </div>
         <div className="p-contact_contentWrap_right">
-          <form className="p-contact_form">
-            <Text modifiers={['24x30', 'coolBlack', '600', 'left']}>Gửi thông tin liên hệ</Text>
-            <div className="p-contact_form_field">
-              <Input placeholder={placeholder.name} />
-              <Input placeholder={placeholder.phone} />
-            </div>
-            <div className="p-contact_form_field">
-              <Input placeholder={placeholder.email} />
-              <Input placeholder={placeholder.title} />
-            </div>
-            <div className="p-contact_form_fieldTextArea">
-              <TextArea placeholder={placeholder.content} rows={4} />
-            </div>
-            <div className="p-contact_form_button">
-              <Button type="submit">
-                <Text modifiers={["white", "uppercase"]}>
-                  {placeholder.button}
-                </Text>
-              </Button>
-            </div>
-          </form>
+          <FormProvider {...method}>
+            <form className="p-contact_form" onSubmit={method.handleSubmit(handleSubmit)} noValidate>
+              <Text modifiers={["24x30", "coolBlack", "600", "left"]}>
+                Gửi thông tin liên hệ
+              </Text>
+              <div className="p-contact_form_field">
+                <Controller
+                  name="name"
+                  control={method.control}
+                  render={({ field, fieldState }) => (
+                    <Input
+                      placeholder={placeholder.name}
+                      value={field.value}
+                      onChange={field.onChange}
+                      error={fieldState.error?.message}
+                    />
+                  )}
+                />
+
+                <Controller
+                  name="phone"
+                  control={method.control}
+                  render={({ field, fieldState }) => (
+                    <Input
+                      placeholder={placeholder.phone}
+                      value={field.value}
+                      onChange={field.onChange}
+                      error={fieldState.error?.message}
+                      type="number"
+                    />
+                  )}
+                />
+              </div>
+              <div className="p-contact_form_field">
+                <Controller
+                  name="email"
+                  control={method.control}
+                  render={({ field, fieldState }) => (
+                    <Input
+                      placeholder={placeholder.email}
+                      value={field.value}
+                      onChange={field.onChange}
+                      error={fieldState.error?.message}
+                    />
+                  )}
+                />
+                <Controller
+                  name="title"
+                  control={method.control}
+                  render={({ field, fieldState }) => (
+                    <Input
+                      placeholder={placeholder.title}
+                      value={field.value}
+                      onChange={field.onChange}
+                      error={fieldState.error?.message}
+                    />
+                  )}
+                />
+              </div>
+              <div className="p-contact_form_fieldTextArea">
+                <Controller
+                  name="content"
+                  control={method.control}
+                  render={({ field, fieldState }) => (
+                    <TextArea
+                      rows={4}
+                      placeholder={placeholder?.content}
+                      value={field.value}
+                      onChange={field.onChange}
+                      error={fieldState.error?.message}
+                    />
+                  )}
+                />
+              </div>
+              <div className="p-contact_form_button">
+                <Button type="submit">
+                  <Text modifiers={["white", "uppercase"]}>
+                    {placeholder.button}
+                  </Text>
+                </Button>
+              </div>
+            </form>
+          </FormProvider>
         </div>
       </div>
     </div>

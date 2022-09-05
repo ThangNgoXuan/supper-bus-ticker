@@ -2,6 +2,10 @@ import React from "react";
 import Text from "../../components/atoms/Text";
 import Input from "../../components/atoms/Input";
 import Button from "../../components/atoms/Button";
+import UploadFile from "../../components/molecules/UploadFile";
+import { FormProvider, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import contactUsSchema from "../../utils/schema";
 
 const jobDetail = {
   title: "SPX - Hub Team Leader - Hanoi",
@@ -29,6 +33,17 @@ const placeholder = {
 };
 
 export default function JobDetail() {
+  const method = useForm({
+    resolver: yupResolver(contactUsSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      content: "",
+      title: "",
+    },
+  });
+
   return (
     <div className="p-jobDetail">
       <div className="p-jobDetail_title">
@@ -48,29 +63,28 @@ export default function JobDetail() {
         <div className="p-jobDetail_recruitment_span" />
       </div>
       <div className="p-jobDetail_formWrap">
-        <form className="p-jobDetail_formWrap_form">
-          <div className="p-jobDetail_formWrap_field">
-            <Input placeholder={placeholder.name} type="text" />
-            <Input placeholder={placeholder.email} type="email" />
-          </div>
-          <div className="p-jobDetail_formWrap_field">
-            <Input placeholder={placeholder.phone} type="number" />
-            <Input placeholder={placeholder.level} type="number" />
-          </div>
-          <div className="p-jobDetail_formWrap_upload">
-            <Text modifiers={["uppercase", "400", "gray"]}>
-              Tập tin không quá 100MB
-            </Text>
-            <input type="file" />
-          </div>
-          <div className="p-jobDetail_formWrap_button">
-            <Button>
-              <Text modifiers={["white", "600", "22x32", "uppercase"]}>
-                Ứng tuyển ngay
-              </Text>
-            </Button>
-          </div>
-        </form>
+        <FormProvider {...method}>
+          <form className="p-jobDetail_formWrap_form">
+            <div className="p-jobDetail_formWrap_field">
+              <Input placeholder={placeholder.name} type="text" />
+              <Input placeholder={placeholder.email} type="email" />
+            </div>
+            <div className="p-jobDetail_formWrap_field">
+              <Input placeholder={placeholder.phone} type="number" />
+              <Input placeholder={placeholder.level} type="number" />
+            </div>
+            <div className="p-jobDetail_formWrap_upload">
+              <UploadFile />
+            </div>
+            <div className="p-jobDetail_formWrap_button">
+              <Button>
+                <Text modifiers={["white", "600", "22x32", "uppercase"]}>
+                  Ứng tuyển ngay
+                </Text>
+              </Button>
+            </div>
+          </form>
+        </FormProvider>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import Text from "../Text";
 const Type = ["email", "text", "number", "password"];
 
 const InputRef = (
-  { error, type, placeholder, id, label, value, modifiers },
+  { error, type, placeholder, id, label, value, modifiers, onChange },
   ref
 ) => {
   return (
@@ -30,6 +30,7 @@ const InputRef = (
           placeholder={placeholder}
           className="a-input_input"
           id={id}
+          onChange={onChange}
         />
       </div>
       {error && (
