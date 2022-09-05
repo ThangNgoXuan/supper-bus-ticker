@@ -26,9 +26,9 @@ const jobDetail = {
 };
 
 const placeholder = {
-  name: "Vui lòng nhập tên",
-  phone: "Vui lòng nhập số điện thoại",
-  email: "Vui lòng nhập email",
+  name: "Họ và tên",
+  phone: "Số điện thoại",
+  email: "Email",
   level: "Số năm kinh nghiệm",
 };
 

@@ -65,7 +65,7 @@ export default function UploadFile({
         </div>
         {error && (
           <div className="m-uploadFile_error">
-            <Text modifiers={["14x180", "electricCrimson"]}>{error}</Text>
+            <Text modifiers={["12x18", "electricCrimson"]}>{error}</Text>
           </div>
         )}
       </div>

@@ -9,27 +9,27 @@ const contactUsSchema = yup.object({
   content: yup.string().required("Vui lòng nhập nội dung"),
   phone: yup
     .string()
-    .required("Số điện thoại là bắt buộc")
+    .required("Vui lòng nhập số điện thoại")
     .matches(phoneRegExp, "Số điện thoại không hợp lệ"),
   email: yup
     .string()
     .email("Địa chỉ email không hợp lệ")
     .max(255, "Nhập tối đa 255 ký tự")
-    .required("Địa chỉ email là bắt buộc"),
+    .required("Vui lòng nhập email"),
 });
 
 export const jobDetail = yup.object({
   name: yup.string().required("Vui lòng nhập tên"),
   phone: yup
     .string()
-    .required("Số điện thoại là bắt buộc")
+    .required("Vui lòng nhập số điện thoại")
     .matches(phoneRegExp, "Số điện thoại không hợp lệ"),
   level: yup.string().required("Vui lòng nhập số năm kinh nghiệm"),
   email: yup
     .string()
     .email("Địa chỉ email không hợp lệ")
     .max(255, "Nhập tối đa 255 ký tự")
-    .required("Địa chỉ email là bắt buộc"),
+    .required("Vui lòng nhập email"),
   file: yup
     .mixed()
     .required("Vui lòng chọn tệp đính kèm")
@@ -51,13 +51,13 @@ export const booking = yup.object({
   name: yup.string().required("Vui lòng nhập tên"),
   phone: yup
     .string()
-    .required("Số điện thoại là bắt buộc")
+    .required("Vui lòng nhập số điện thoại")
     .matches(phoneRegExp, "Số điện thoại không hợp lệ"),
   email: yup
     .string()
     .email("Địa chỉ email không hợp lệ")
     .max(255, "Nhập tối đa 255 ký tự")
-    .required("Địa chỉ email là bắt buộc"),
+    .required("Vui lòng nhập email"),
 });
 
 export default contactUsSchema;
