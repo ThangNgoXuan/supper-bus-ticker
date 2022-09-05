@@ -28,11 +28,32 @@
 
     &_searchWrap {
         margin: rem(60) 0 rem(20);
+
+        &_search {
+            display: flex;
+            margin-top: rem(16);
+            background-color: $cool-black;
+            width: fit-content;
+            border-radius: rem(5);
+
+            svg {
+                color: $white;
+            }
+
+            .a-input {
+                width: rem(400);
+            }
+
+            .a-button {
+                width: fit-content;
+            }
+        }
     }
 
     &_listSchedule {
         margin-bottom: rem(60);
         border: rem(1) solid $black016;
+        margin-top: rem(8);
     }
 
     &_table {
