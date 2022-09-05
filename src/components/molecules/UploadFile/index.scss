@@ -34,6 +34,7 @@
         align-items: center;
         display: flex;
         margin-top: rem(8);
+        margin-left: rem(8);
 
         .a-text {
             max-width: rem(220);
@@ -44,6 +45,8 @@
 
         &_delete {
             cursor: pointer;
+            margin-left: rem(8);
+            @include adjust-flex(center,center)
         }
     }
 
@@ -59,11 +62,11 @@
         .a-text {
             margin-left: rem(8);
         }
+    }
 
-        &_label {
-            align-items: center;
-            cursor: pointer;
-            display: inline-flex;
-        }
+    &_label {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
     }
 }

@@ -3,9 +3,9 @@ import Text from "../../components/atoms/Text";
 import Input from "../../components/atoms/Input";
 import Button from "../../components/atoms/Button";
 import UploadFile from "../../components/molecules/UploadFile";
-import { FormProvider, useForm } from "react-hook-form";
+import { Controller, FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import contactUsSchema from "../../utils/schema";
+import { jobDetail as jobDetailSchema } from "../../utils/schema";
 
 const jobDetail = {
   title: "SPX - Hub Team Leader - Hanoi",
@@ -33,16 +33,23 @@ const placeholder = {
 };
 
 export default function JobDetail() {
+
   const method = useForm({
-    resolver: yupResolver(contactUsSchema),
+    resolver: yupResolver(jobDetailSchema),
     defaultValues: {
       name: "",
       email: "",
       phone: "",
-      content: "",
-      title: "",
+      level: "",
     },
   });
+
+  const handleSubmit = (data) => {
+    console.log(data);
+    method.reset();
+    alert("Gửi thành công");
+  }
+
 
   return (
     <div className="p-jobDetail">
@@ -64,20 +71,90 @@ export default function JobDetail() {
       </div>
       <div className="p-jobDetail_formWrap">
         <FormProvider {...method}>
-          <form className="p-jobDetail_formWrap_form">
+          <form
+            className="p-jobDetail_formWrap_form"
+            onSubmit={method.handleSubmit(handleSubmit)}
+            noValidate
+          >
             <div className="p-jobDetail_formWrap_field">
-              <Input placeholder={placeholder.name} type="text" />
-              <Input placeholder={placeholder.email} type="email" />
+              <Controller
+                name="name"
+                control={method.control}
+                render={({ field, fieldState }) => (
+                  <Input
+                    placeholder={placeholder.name}
+                    value={field.value}
+                    onChange={field.onChange}
+                    error={fieldState.error?.message}
+                  />
+                )}
+              />
+
+              <Controller
+                name="email"
+                control={method.control}
+                render={({ field, fieldState }) => (
+                  <Input
+                    placeholder={placeholder.email}
+                    value={field.value}
+                    onChange={field.onChange}
+                    error={fieldState.error?.message}
+                    type="email"
+                  />
+                )}
+              />
             </div>
             <div className="p-jobDetail_formWrap_field">
-              <Input placeholder={placeholder.phone} type="number" />
-              <Input placeholder={placeholder.level} type="number" />
+              <Controller
+                name="phone"
+                control={method.control}
+                render={({ field, fieldState }) => (
+                  <Input
+                    placeholder={placeholder.phone}
+                    value={field.value}
+                    onChange={field.onChange}
+                    error={fieldState.error?.message}
+                    type="number"
+                  />
+                )}
+              />
+              <Controller
+                name="level"
+                control={method.control}
+                render={({ field, fieldState }) => (
+                  <Input
+                    placeholder={placeholder.level}
+                    value={field.value}
+                    onChange={field.onChange}
+                    error={fieldState.error?.message}
+                    type="number"
+                  />
+                )}
+              />
             </div>
             <div className="p-jobDetail_formWrap_upload">
-              <UploadFile />
+              <Controller
+                name="file"
+                control={method.control}
+                render={({ field, fieldState }) => (
+                  <UploadFile
+                    id="file"
+                    name="file"
+                    title="TẬP TIN ĐÍNH KÈM: (không quá 1Mb)"
+                    error={fieldState.error?.message}
+                    handleRemove={() => field.onChange(null)}
+                    handleChange={(e) => {
+                      if (e.target.files && e.target.files.length > 0) {
+                        field.onChange(e.target.files[0]);
+                      }
+                      e.target.value = "";
+                    }}
+                  />
+                )}
+              />
             </div>
             <div className="p-jobDetail_formWrap_button">
-              <Button>
+              <Button type="submit">
                 <Text modifiers={["white", "600", "22x32", "uppercase"]}>
                   Ứng tuyển ngay
                 </Text>

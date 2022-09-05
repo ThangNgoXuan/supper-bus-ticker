@@ -10,8 +10,6 @@ export default function UploadFile({
   error,
   handleChange,
   handleRemove,
-  maxSize,
-  resetFile,
 }) {
   const [fileName, setFileName] = useState("");
   const onChange = (e) => {
@@ -38,11 +36,11 @@ export default function UploadFile({
     <div className="m-uploadFile">
       <div className="m-uploadFile_left">
         <div className="m-uploadFile_title">
-          <Text modifiers={[]}>{title}</Text>
+          <Text modifiers={['14x18', '400']}>{title}</Text>
         </div>
         {fileName !== "" && (
           <div className="m-uploadFile_filename" title={fileName}>
-            <Text modifiers={["14x18", "camel", "500"]}>{fileName}</Text>
+            <Text modifiers={["14x18", "coolBlack", "600"]}>{fileName}</Text>
             <div className="m-uploadFile_filename_delete" onClick={removeFile}>
               <AiOutlineCloseCircle />
             </div>
@@ -67,7 +65,7 @@ export default function UploadFile({
         </div>
         {error && (
           <div className="m-uploadFile_error">
-            <Text modifiers={[]}>{error}</Text>
+            <Text modifiers={["14x180", "electricCrimson"]}>{error}</Text>
           </div>
         )}
       </div>

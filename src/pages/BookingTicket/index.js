@@ -10,6 +10,8 @@ import Pulldown from "../../components/molecules/Pulldown";
 import Tabs, { Tab, TabPanel } from "../../components/organisms/Tabs";
 import momo from "../../assets/images/momo.png";
 import vnpay from "../../assets/images/vnpay.png";
+import { FormProvider } from "react-hook-form";
+import { booking } from "../../utils/schema";
 
 const data = new Array(5).fill({
   timeGo: "08:00",
@@ -47,8 +49,6 @@ const priceType = [
   { id: '2', name: 'low to hight', value: 'Thấp đến cao'},
 ];
 
-
-
 export default function BookingTicket() {
   const [indexActive, setIndexActive] = useState(0);
 
@@ -73,6 +73,8 @@ export default function BookingTicket() {
         </div>
       ),
     },
+
+  /* Xác định lộ trình */
     {
       id: "2",
       label: "Xác nhận lộ trình",
@@ -163,6 +165,9 @@ export default function BookingTicket() {
         </div>
       ),
     },
+
+/* Thong tin khách hàng */
+
     {
       id: "3",
       label: "Thông tin khách hàng",
@@ -229,6 +234,8 @@ export default function BookingTicket() {
         </>
       ),
     },
+
+    /* Thanh toán */
     {
       id: "4",
       label: "Thanh toán",

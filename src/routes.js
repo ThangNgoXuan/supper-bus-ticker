@@ -1,16 +1,16 @@
 const routerPage = [
-    { 
+    {
         path: '/',
         label: 'Trang chủ',
     },
-    { 
+    {
         path: '/lich-trinh',
         label: 'Lịch trình',
     },
-    {
-        path: '/vi-tri-xe',
-        label: 'Vị trí xe',
-    },
+    // {
+    //     path: '/vi-tri-xe',
+    //     label: 'Vị trí xe',
+    // },
     {
         path: '/tuyen-dung',
         label: 'Tuyển dụng',

@@ -12,8 +12,6 @@ export default function Header() {
     const [open, setOpen] = useState(false);
     const [choose, setChoose ] = useState(routerPage[0].label);
 
-    console.log(choose)
-
     const handleClose = () => {
         setOpen(false)
     }

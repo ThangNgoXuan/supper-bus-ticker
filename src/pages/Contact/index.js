@@ -1,11 +1,11 @@
 import React from "react";
+import { Controller, FormProvider, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import Text from "../../components/atoms/Text";
 import Image from "../../components/atoms/Image";
 import Input from "../../components/atoms/Input";
 import Button from "../../components/atoms/Button";
 import TextArea from "../../components/atoms/TextArea";
-import { Controller, FormProvider, useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import contactUsSchema from "../../utils/schema";
 
 const title = "Liên hệ với Bus-ticket chúng tôi";
@@ -29,7 +29,6 @@ export default function Contact() {
 
   const handleSubmit = (data) => {
     console.log(data);
-    method.reset();
     alert("Gửi thành công");
   }
 
