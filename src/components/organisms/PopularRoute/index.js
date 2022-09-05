@@ -4,72 +4,14 @@ import Image from "../../atoms/Image";
 import Link from "../../atoms/Link";
 
 const title = "tuyến phổ biến";
-const listPlace = [
-  {
-    title: "ha noi => ho chi minh",
-    imgSrc: "https://picsum.photos/200",
-    times: "8h",
-    priceTicket: "300.000 đ",
-    distance: "300 km",
-    path: "https://google.com",
-  },
-  {
-    title: "ha noi => ho chi minh",
-    imgSrc: "https://picsum.photos/200",
-    times: "8h",
-    priceTicket: "300.000 đ",
-    distance: "300 km",
-    path: "https://google.com",
-  },
-  {
-    title: "ha noi => ho chi minh",
-    imgSrc: "https://picsum.photos/200",
-    times: "8h",
-    priceTicket: "300.000 đ",
-    distance: "300 km",
-    path: "https://google.com",
-  },
-  {
-    title: "ha noi => ho chi minh",
-    imgSrc: "https://picsum.photos/200",
-    times: "8h",
-    priceTicket: "300.000 đ",
-    distance: "300 km",
-    path: "https://google.com",
-  },
-  {
-    title: "ha noi => ho chi minh",
-    imgSrc: "https://picsum.photos/200",
-    times: "8h",
-    priceTicket: "300.000 đ",
-    distance: "300 km",
-    path: "https://google.com",
-  },
-  {
-    title: "ha noi => ho chi minh",
-    imgSrc: "https://picsum.photos/200",
-    times: "8h",
-    priceTicket: "300.000 đ",
-    distance: "300 km",
-    path: "https://google.com",
-  },
-  {
-    title: "ha noi => ho chi minh",
-    imgSrc: "https://picsum.photos/200",
-    times: "8h",
-    priceTicket: "300.000 đ",
-    distance: "300 km",
-    path: "https://google.com",
-  },
-  {
-    title: "ha noi => ho chi minh",
-    imgSrc: "https://picsum.photos/200",
-    times: "8h",
-    priceTicket: "300.000 đ",
-    distance: "300 km",
-    path: "https://google.com",
-  },
-];
+const listPlace = new Array(8).fill(  {
+  title: "ha noi => ho chi minh",
+  imgSrc: "https://picsum.photos/200",
+  times: "8h",
+  priceTicket: "300.000 đ",
+  distance: "300 km",
+  path: "tin-chi-tiet",
+},);
 
 export default function PopularRoute() {
   return (

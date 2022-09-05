@@ -1,7 +1,7 @@
 {
   "name": "supper-bus-ticker",
   "version": "0.1.0",
-  "homepage": "https://ThangNgoXuan.github.io/supper-bus-ticker/",
+  "homepage": "https://ThangNgoXuan.github.io/",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.7.0",

@@ -32,48 +32,11 @@ const settings = {
   ],
 };
 
-const dataList = [
-  {
-    link: "https://google.com",
-    imgSrc: "https://picsum.photos/229",
-    text: "Han noi",
-  },
-  {
-    link: "https://google.com",
-    imgSrc: "https://picsum.photos/228",
-    text: "Han noi",
-  },
-  {
-    link: "https://google.com",
-    imgSrc: "https://picsum.photos/227",
-    text: "hanoi",
-  },
-  {
-    link: "https://google.com",
-    imgSrc: "https://picsum.photos/2226",
-    text: "hanoi",
-  },
-  {
-    link: "https://google.com",
-    imgSrc: "https://picsum.photos/224",
-    text: "hanoi",
-  },
-  {
-    link: "https://google.com",
-    imgSrc: "https://picsum.photos/222",
-    text: "hanoi",
-  },
-  {
-    link: "https://google.com",
-    imgSrc: "https://picsum.photos/223",
-    text: "hanoi",
-  },
-  {
-    link: "https://google.com",
-    imgSrc: "https://picsum.photos/225",
-    text: "hanoi",
-  },
-];
+const dataList = new Array(6).fill(  {
+  link: "/tin-chi-tiet",
+  imgSrc: "https://picsum.photos/229",
+  text: "Han noi",
+},);
 
 export default function TopDestination() {
   return (

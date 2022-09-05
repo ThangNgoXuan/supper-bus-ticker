@@ -5,26 +5,12 @@ import Link from "../../atoms/Link";
 import Button from "../../atoms/Button";
 
 const title = "tin tức";
-const listNews = [
-  {
-    img: "https://picsum.photos/200",
-    title: "Bai viet 1",
-    description: "noi dung bai viet 1",
-    path: "https://google.com",
-  },
-  {
-    img: "https://picsum.photos/200",
-    title: "Bai viet 1",
-    description: "noi dung bai viet 1",
-    path: "https://google.com",
-  },
-  {
-    img: "https://picsum.photos/200",
-    title: "Bai viet 1",
-    description: "noi dung bai viet 1",
-    path: "https://google.com",
-  },
-];
+const listNews = new Array(3).fill(  {
+  img: "https://picsum.photos/200",
+  title: "Bai viet 1",
+  description: "noi dung bai viet 1",
+  path: "/tin-chi-tiet",
+},);
 
 export default function Information() {
   return (
