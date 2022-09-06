@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../components/atoms/Button";
+import InputDate from "../../components/atoms/InputDate";
 import Link from "../../components/atoms/Link";
 import Text from "../../components/atoms/Text";
 
@@ -117,7 +118,7 @@ export default function ScheduleDetail() {
           </div>
           <div className="p-scheduleDetail_detail_time">
             <div className="p-scheduleDetail_time_chooseTime">
-              <input type="date" />
+              <InputDate/>
               <Text>Chọn ngày đi</Text>
             </div>
             <table className="p-scheduleDetail_time_table">

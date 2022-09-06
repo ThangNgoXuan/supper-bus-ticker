@@ -13,6 +13,7 @@ import vnpay from "../../assets/images/vnpay.png";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { booking } from "../../utils/schema";
 import { yupResolver } from "@hookform/resolvers/yup";
+import InputDate from "../../components/atoms/InputDate";
 
 const data = new Array(5).fill({
   timeGo: "08:00",
@@ -85,6 +86,7 @@ export default function BookingTicket() {
   const handleSubmit = (data) => {
     console.log(data);
     alert("nhap thanh cong");
+    setIndexActive(indexActive + 1)
   };
 
   return (
@@ -114,10 +116,19 @@ export default function BookingTicket() {
                 <Input label="Điểm đến" placeholder="Nhập điểm đi" />
               </div>
               <div className="p-bookingTicket_schedule_item">
-                <Input label="Chọn ngày đi" placeholder="Ngày đi" />
+                <InputDate
+                  label="Chọn ngày đi"
+                  max="2022-12-31"
+                  min="2022-09-06"
+                />
               </div>
               <div className="p-bookingTicket_schedule_item">
-                <Button label="Tìm chuyến xe">Tìm chuyến xe</Button>
+                <Button
+                  label="Tìm chuyến xe"
+                  handleClick={() => setIndexActive(indexActive + 1)}
+                >
+                  Tìm chuyến xe
+                </Button>
               </div>
             </div>
           </TabPanel>
@@ -170,7 +181,7 @@ export default function BookingTicket() {
                               </div>
                               <div className="p-bookingTicket_item_choose">
                                 <Text>Chọn</Text>
-                                <input type="radio" />
+                                <input type="checkbox" />
                               </div>
                             </div>
                             <div className="p-bookingTicket_item_bookingWrap">
@@ -207,7 +218,7 @@ export default function BookingTicket() {
                         <Button
                           handleClick={() => setIndexActive(indexActive + 1)}
                         >
-                          Phía trước
+                          Tiếp tục
                         </Button>
                       </div>
                     </div>
@@ -280,7 +291,11 @@ export default function BookingTicket() {
                       <input type="checkbox" />
                       <Text>Chấp nhận các điều khoản đặt vé của BusTicket</Text>
                     </div>
-                    <Button type="submit">Gửi</Button>
+                    <Button
+                      type="submit"
+                    >
+                      Tiếp tục
+                    </Button>
                   </form>
                 </FormProvider>
               </div>
@@ -319,9 +334,6 @@ export default function BookingTicket() {
             <div className="p-bookingTicket_route_button">
               <Button handleClick={() => setIndexActive(indexActive - 1)}>
                 Quay lại
-              </Button>
-              <Button handleClick={() => setIndexActive(indexActive + 1)}>
-                Phía trước
               </Button>
             </div>
           </TabPanel>

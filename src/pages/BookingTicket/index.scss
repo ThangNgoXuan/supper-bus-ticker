@@ -134,12 +134,20 @@
         color: $jet;
         transition: $transition;
         &:hover {
-          color: $cool-black;
+          .a-text {
+            color: $white;
+          }
+
+          svg {
+            background-color: $cool-black;
+            color: white;
+          }
         }
 
         svg {
           width: rem(40);
           height: rem(40);
+          border-radius: rem(5);
         }
 
         .a-text {

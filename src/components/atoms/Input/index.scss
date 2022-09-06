@@ -47,7 +47,7 @@
             border: rem(1) solid $electric-crimson;
             box-shadow: none;
         }
-        #{$root}_input,   
+        #{$root}_input,
         #{$root}_input::placeholder {
             color: $electric-crimson;
         }

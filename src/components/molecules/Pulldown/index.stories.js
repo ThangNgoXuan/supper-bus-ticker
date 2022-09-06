@@ -10,7 +10,7 @@ export default {
         },
         noData: {
             control: 'text',
-        }, 
+        },
         label: {
             control: 'text',
         },
@@ -32,15 +32,15 @@ const value = { id: '1', name: '1', value: 'option 1'};
 
 
 
-export const Primary = ({placeholder, noData, label}) => 
+export const Primary = ({placeholder, noData, label}) =>
 {
     const [select, setSelect] = useState(value);
  return (
-    <Pulldown 
-        placeholder={placeholder} 
-        noData={noData} 
-        label={label} 
-        listData={dataList} 
+    <Pulldown
+        placeholder={placeholder}
+        noData={noData}
+        label={label}
+        listData={dataList}
         value={select}
         onSelect={(value) => setSelect(value)}
     />
