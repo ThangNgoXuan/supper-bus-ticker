@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/supper-bus-ticker/static/css/main.bc0cc5fe.css",
-    "main.js": "/supper-bus-ticker/static/js/main.42d58133.js",
+    "main.css": "/supper-bus-ticker/static/css/main.3de8b9ee.css",
+    "main.js": "/supper-bus-ticker/static/js/main.5a9a642b.js",
     "static/js/787.eebb2670.chunk.js": "/supper-bus-ticker/static/js/787.eebb2670.chunk.js",
     "static/media/bocongthuong.png": "/supper-bus-ticker/static/media/bocongthuong.409a7dd0f52c70ab165b.png",
     "static/media/error404.svg": "/supper-bus-ticker/static/media/error404.2042d7c079c7aba05aff244908b79f29.svg",
@@ -10,12 +10,12 @@
     "static/media/slick.ttf": "/supper-bus-ticker/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/supper-bus-ticker/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/supper-bus-ticker/index.html",
-    "main.bc0cc5fe.css.map": "/supper-bus-ticker/static/css/main.bc0cc5fe.css.map",
-    "main.42d58133.js.map": "/supper-bus-ticker/static/js/main.42d58133.js.map",
+    "main.3de8b9ee.css.map": "/supper-bus-ticker/static/css/main.3de8b9ee.css.map",
+    "main.5a9a642b.js.map": "/supper-bus-ticker/static/js/main.5a9a642b.js.map",
     "787.eebb2670.chunk.js.map": "/supper-bus-ticker/static/js/787.eebb2670.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc0cc5fe.css",
-    "static/js/main.42d58133.js"
+    "static/css/main.3de8b9ee.css",
+    "static/js/main.5a9a642b.js"
   ]
 }
