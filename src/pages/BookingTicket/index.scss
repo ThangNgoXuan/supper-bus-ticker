@@ -211,12 +211,10 @@
 
     &_field {
       margin-top: rem(12);
-      &:last-child {
-        display: flex;
-        .a-text {
-          margin-right: rem(8);
-        }
-      }
+    }
+
+    &_checkbox {
+      display: flex;
     }
   }
 

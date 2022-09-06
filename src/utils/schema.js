@@ -58,6 +58,7 @@ export const booking = yup.object({
     .email("Địa chỉ email không hợp lệ")
     .max(255, "Nhập tối đa 255 ký tự")
     .required("Vui lòng nhập email"),
+    chooseCb: yup.bool().oneOf([true], 'Checkbox selection is required'),
 });
 
 export default contactUsSchema;
