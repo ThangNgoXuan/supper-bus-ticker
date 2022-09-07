@@ -1,74 +1,75 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
+import newsApi from "../../api/newsApi";
 import Image from "../../components/atoms/Image";
 import Link from "../../components/atoms/Link";
 import Text from "../../components/atoms/Text";
 import NewsCard from "../../components/organisms/NewsCard";
 import Pagination from "../../components/organisms/Pagination";
+import useFetch from "../../hooks/useFetch";
+import moment from "moment/moment";
 
 const title = "Tin tức";
-const dataNews = new Array(7).fill({
-  title: "Bài viết 1",
-  more: "Xem thêm",
-  time: "10/20/2022",
-  link: "/tin-chi-tiet",
-  imgSrc: "https://picsum.photos/425/285",
-  description: "Nôi dung bài viet môt",
-});
 
 export default function News() {
+  /*eslint-disable-next-line */
+  const [loading, data, _, fetch, refetch] = useFetch({}, newsApi.getAllNews);
+
+  useEffect(() => {
+    fetch({}, true);
+    /*eslint-disable-next-line */
+  }, []);
+
+  console.log(data);
+
   return (
     <div className="p-news">
-      <div className="p-news_title">
+       <div className="p-news_title">
         <Text modifiers={["30x32", "600", "coolBlack", "center", "uppercase"]}>
           {title}
         </Text>
       </div>
       <div className="p-news_wrapContent">
-        <Link href={dataNews[0].link}>
+        <Link href={data[0]?.slug}>
           <div className="p-news_wrapContent_header">
-            <Image imgSrc={dataNews[0].imgSrc} ratio="895x590" />
+            <Image imgSrc={data[0]?.thumbnail} ratio="895x590" />
             <div className="p-news_fistNews">
               <div className="p-news_fistNews_time">
                 <AiOutlineClockCircle />
                 <Text modifiers={["16x20", "dimGray", "400"]}>
-                  {dataNews[0].time}
+                  {moment(data[0]?.createdAt).format('DD/MM/YYYY')}
                 </Text>
               </div>
               <div className="p-news_fistNews_title">
                 <Text modifiers={["28x32", "oxfordBlue", "400"]}>
-                  {dataNews[0].title}
+                  {data[0]?.title}
                 </Text>
               </div>
               <div className="p-news_fistNews_spanBorder" />
               <div className="p-news_fistNews_description">
-                <Text modifiers={["16x24", "outerSpace", "400"]}>
-                  {dataNews[0].description}
-                </Text>
+                <Text modifiers={["16x24", "outerSpace", "400"]} content={data[0]?.subtitle} />
               </div>
               <div className="p-news_fistNews_more">
                 <Text modifiers={["16x34", "electricCrimson", "400"]}>
-                  {dataNews[0].more}
-                </Text>
+                  {moment(data[0]?.more).format('DD/MM/YYYY')}
+                 </Text>
               </div>
             </div>
           </div>
         </Link>
         <div className="p-news_wrapContent_bottom">
-          {dataNews &&
-            dataNews.length > 0 &&
-            dataNews
-              .slice(1)
-              .map((item, index) => (
-                <NewsCard
-                  key={`item-new-${index.toString()}`}
-                  link={item.link}
-                  more={item.more}
-                  time={item.time}
-                  title={item.title}
-                  imgSrc={item.imgSrc}
-                />
-              ))}
+          {data &&
+            data.length > 0 &&
+            data.slice(1).map((item) => (
+              <NewsCard
+                key={item?._id}
+                link={item?.slug}
+                more="Xem thêm"
+                time={moment(item?.createdAt).format('DD/MM/YYYY')}
+                title={item?.title}
+                imgSrc={item?.thumbnail}
+              />
+            ))}
         </div>
       </div>
       <div className="p-news_pagination">

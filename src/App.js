@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/ve-chung-toi" element={<AboutUs/>}/>
           <Route exact path="/tuyen-dung" element={<Recruit/>}/>
           <Route exact path="/lien-he" element={<Contact/>}/>
-          <Route exact path="/tin-chi-tiet" element={<NewsDetail/>}/>
+          <Route exact path="/tin-tuc/:slug" element={<NewsDetail/>}/>
           <Route exact path="/cong-viec-chi-tiet" element={<JobDetail/>}/>
           <Route exact path="/dat-ve" element={<BookingTicket/>}/>
           <Route exact path="/chi-tiet-chuyen-xe" element={<ScheduleDetail/>}/>

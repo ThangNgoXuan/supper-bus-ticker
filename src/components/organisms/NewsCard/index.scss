@@ -12,7 +12,6 @@
 
     &_time {
         @include adjust-flex(flex-start, center);
-        
         svg {
             margin-right: rem(8);
         }

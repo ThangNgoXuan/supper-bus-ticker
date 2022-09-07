@@ -8,9 +8,11 @@ export default function Home() {
   return (
     <div className='p-home'>
         <HeroBanner />
+        <div className="p-home_body">
         <PopularRoute />
         <TopDestination/>
         <Information/>
+        </div>
     </div>
   )
 }

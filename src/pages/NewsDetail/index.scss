@@ -1,9 +1,4 @@
 .p-newsDetail {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: rem(16);
-  padding-right: rem(16);
-
   @include small-mobile-up {
     max-width: rem(540);
   }
@@ -26,8 +21,8 @@
     padding-right: rem(120);
   }
 
-  padding-top: rem(60);
-  padding-bottom: rem(60);
+  padding-top: rem(200);
+  padding-bottom: rem(200);
 
   @include tablet-down {
     padding-top: rem(40);

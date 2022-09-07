@@ -1,3 +1,6 @@
 .p-home {
-    padding-bottom: rem(60);
+    &_body {
+        padding: 0 rem(200);
+        padding-bottom: rem(60);
+    }
 }

@@ -1,0 +1,37 @@
+.o-heroBanner {
+    background-image: url("https://picsum.photos/1200/300");
+    width: 100%;
+    height: calc(100vh - 86px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    &_content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include adjust-flex();
+        flex-direction: column;
+    }
+
+    &_search {
+        width: 100%;
+        display: flex;
+        margin-top: rem(40);
+        background-color: $white;
+
+        .a-input_input {
+            border-radius: 0;
+        }
+
+        .a-button {
+            width: fit-content;
+            border-radius: 0;
+        }
+    }
+
+
+
+}
