@@ -1,74 +1,79 @@
 .p-newsDetail {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: rem(16);
-    padding-right: rem(16);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: rem(16);
+  padding-right: rem(16);
 
-    @include small-mobile-up {
-      max-width: rem(540);
-    }
+  @include small-mobile-up {
+    max-width: rem(540);
+  }
 
-    @include mobile-up {
-      max-width: rem(720);
-    }
+  @include mobile-up {
+    max-width: rem(720);
+  }
 
-    @include tablet-up {
-      max-width: rem(960);
-    }
+  @include tablet-up {
+    max-width: rem(960);
+  }
 
-    @include desktop-up {
-      max-width: rem(1140);
-    }
+  @include desktop-up {
+    max-width: rem(1140);
+  }
 
-    @include break-min(1366px) {
-      max-width: 1366px;
-      padding-left: rem(120);
-      padding-right: rem(120);
-    }
+  @include break-min(1366px) {
+    max-width: 1366px;
+    padding-left: rem(120);
+    padding-right: rem(120);
+  }
 
-    padding-top: rem(100);
-    padding-bottom: rem(100);
+  padding-top: rem(60);
+  padding-bottom: rem(60);
 
-    @include tablet-down {
-      padding-top: rem(60);
-      padding-bottom: rem(60);
-    }
+  @include tablet-down {
+    padding-top: rem(40);
+    padding-bottom: rem(40);
+  }
+
+  @include mobile-down {
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+  }
+
+  &_detailWrap {
+    margin-top: rem(50);
+    border-left: rem(5) solid $cool-black;
+    padding: rem(12) rem(25);
 
     @include mobile-down {
-      padding-top: rem(40);
-      padding-bottom: rem(40);
+      margin-top: rem(20);
     }
 
-    &_detailWrap {
-        margin-top: rem(50);
-        border-left: rem(5) solid $cool-black;
-        padding: rem(12) rem(25);
+    &_time {
+      @include adjust-flex(flex-start, center);
 
-        @include mobile-down {
-          margin-top: rem(20);
-        }
-
-        &_time {
-            @include adjust-flex(flex-start, center);
-
-            svg {
-                margin-right: rem(4);
-                color: $dim-gray;
-                font-size: 600;
-            }
-        }
-
-        &_trailer {
-            margin-top: rem(10);
-        }
+      svg {
+        margin-right: rem(4);
+        color: $dim-gray;
+        font-size: 600;
+      }
     }
 
-    &_content {
-        margin-top: rem(40);
+    &_trailer {
+      margin-top: rem(10);
+    }
+  }
 
-        @include mobile-down {
-            margin-bottom: rem(20);
-        }
+  &_content {
+    margin-top: rem(40);
+
+    @include mobile-down {
+      margin-bottom: rem(20);
     }
 
+    img {
+      max-width: 100%;
+      margin: rem(12) auto;
+      display: block;
+    }
+  }
 }

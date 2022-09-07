@@ -1,19 +1,47 @@
 .p-aboutUs {
-    margin: rem(60) 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: rem(60) 0;
+  padding-left: rem(80);
+  padding-right: rem(80);
 
-    @include tablet-down {
-        margin: rem(40) 0;
-    }
+  @include small-mobile-up {
+    max-width: rem(540);
+  }
 
-    @include mobile-down {
-        margin: rem(20) 0;
-    }
-}
+  @include mobile-up {
+    max-width: rem(720);
+  }
 
-.p_aboutUs_content {
-    margin-top: rem(40);
+  @include tablet-up {
+    max-width: rem(960);
+  }
 
-    @include mobile-down {
-        margin-top: rem(40);
-    }
+  @include desktop-up {
+    max-width: rem(1140);
+  }
+
+  @include break-min(1366px) {
+    max-width: 1366px;
+    padding-left: rem(120);
+    padding-right: rem(120);
+  }
+
+  @include tablet-down {
+    margin: rem(40) 0;
+  }
+
+  @include mobile-down {
+    margin: rem(20) 0;
+  }
+
+  &_content {
+    margin: rem(20) ;
+  }
+
+  img {
+    max-width: 100%;
+    margin: rem(12) auto;
+    display: block;
+  }
 }
