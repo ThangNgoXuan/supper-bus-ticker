@@ -27,6 +27,109 @@ const listChair = new Array(10).fill({
   div: <TbArmchair />,
 });
 
+const listSchema = [
+  {
+    key: "A0",
+    status: true,
+  },
+  {
+    key: "A00",
+    status: true,
+  },
+  {
+    key: "A1",
+    status: true,
+  },
+  {
+    key: "A2",
+    status: true,
+  },
+  {
+    key: "A3",
+    status: true,
+  },
+  {
+    key: "A4",
+    status: true,
+  },
+  {
+    key: "A5",
+    status: true,
+  },
+  {
+    key: "A6",
+    status: true,
+  },
+  {
+    key: "A7",
+    status: true,
+  },
+  {
+    key: "A8",
+    status: true,
+  },
+  {
+    key: "A9",
+    status: true,
+  },
+  {
+    key: "A10",
+    status: true,
+  },
+  {
+    key: "A11",
+    status: true,
+  },
+  {
+    key: "A12",
+    status: true,
+  },
+  {
+    key: "A13",
+    status: true,
+  },
+  {
+    key: "A14",
+    status: true,
+  },
+  {
+    key: "A15",
+    status: true,
+  },
+  {
+    key: "A16",
+    status: true,
+  },
+  {
+    key: "A17",
+    status: true,
+  },
+  {
+    key: "A18",
+    status: true,
+  },
+  {
+    key: "A19",
+    status: true,
+  },
+  {
+    key: "A20",
+    status: true,
+  },
+  {
+    key: "A21",
+    status: true,
+  },
+  {
+    key: "A22",
+    status: true,
+  },
+  {
+    key: "A23",
+    status: true,
+  },
+];
+
 const ticketInfo = {
   name: "Ngô Xuân Thắng",
   phone: "0337930954",
@@ -86,7 +189,7 @@ export default function BookingTicket() {
   const handleSubmit = (data) => {
     console.log(data);
     alert("nhap thanh cong");
-    setIndexActive(indexActive + 1)
+    setIndexActive(indexActive + 1);
   };
 
   return (
@@ -291,11 +394,7 @@ export default function BookingTicket() {
                       <input type="checkbox" />
                       <Text>Chấp nhận các điều khoản đặt vé của BusTicket</Text>
                     </div>
-                    <Button
-                      type="submit"
-                    >
-                      Tiếp tục
-                    </Button>
+                    <Button type="submit">Tiếp tục</Button>
                   </form>
                 </FormProvider>
               </div>
@@ -383,6 +482,30 @@ export default function BookingTicket() {
               <Button handleClick={() => setIndexActive(indexActive - 1)}>
                 Quay lại
               </Button>
+            </div>
+
+            <div className="p-bookingTicket_item_bookingWrap">
+              <div className="p-bookingTicket_item_chairWrap">
+                {listSchema.map((item) => (
+                  <div
+                    className={`p-bookingTicket_item_chairWrap_chair chair ${item.key}`}
+                    key={item.key}
+                  >
+                    <TbArmchair/>
+                    <Text>{item.key}</Text>
+                  </div>
+                ))}
+              </div>
+              <div className="p-bookingTicket_item_statusWrap">
+                <div className="p-bookingTicket_item_seleted">
+                  <div />
+                  <Text>Đã chọn</Text>
+                </div>
+                <div className="p-bookingTicket_item_seleted p-bookingTicket_item_notyet">
+                  <div />
+                  <Text modifiers={["coolBlack"]}>Chưa chọn</Text>
+                </div>
+              </div>
             </div>
           </TabPanel>
         </dib>
