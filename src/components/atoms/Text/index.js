@@ -4,7 +4,7 @@ import mapModifiers from '../../../utils/functions';
 import DOMPurify from 'dompurify';
 
 
-const Size = [ '12x18', '14x18', '12x14', '14x32', '14x42', '16x24', '16x20', '80x88', '30x32', '24x30', '28x32', "32x48", "22x52", "22x32", "52x68", "16x42", "15x42", "24x34"];
+const Size = [ '12x18', '14x18', '12x14', '14x32', '14x42', '16x24', '16x20', '16x18', '18x26','80x88', '30x32', '24x30', '28x32', "32x48", "22x52", "22x32", "52x68", "16x42", "15x42", "24x34", "32x46"];
 export const FontFamily = ['fontRoboto', 'fontLato'];
 export const FontWeight = ['100', '200', '300', '400', '500', '600', '700', '800', '900'];
 export const TextStyle = ['uppercase','capitalize','underline','italic','center','justify', 'left', 'right'];
