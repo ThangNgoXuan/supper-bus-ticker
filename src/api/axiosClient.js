@@ -30,9 +30,9 @@ axiosClient.interceptors.response.use(
   },
   (error) => {
     const message =
-      error.response && error.response.data.message
-        ? error.response.data.message
-        : error.message;
+      error?.response && error.response?.data?.message
+        ? error?.response?.data?.message
+        : error?.message;
 
     if (message === "Invalid Token") {
       localStorage.getItem("userInfo");
