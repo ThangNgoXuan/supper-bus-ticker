@@ -5,6 +5,10 @@ import Text from "../../components/atoms/Text";
 import Button from "../../components/atoms/Button";
 import Link from "../../components/atoms/Link";
 import { FiSearch } from "react-icons/fi";
+import useFetch from "../../hooks/useFetch";
+import { useEffect } from "react";
+import newsApi from "../../api/newsApi";
+import routesApi from "../../api/routesApi";
 
 const title = "Tìm chuyến xe";
 const dataList = new Array(20).fill({
@@ -55,12 +59,27 @@ const listTh = [
 ];
 
 export default function Schedule() {
+  const [loading, data, _, fetch, refetch] = useFetch(
+    {},
+    routesApi.getRoutesGroupby
+  );
+
+  useEffect(() => {
+    fetch({}, true);
+    /*eslint-disable-next-line */
+  }, []);
+
+  /*eslint-disable-next-line */
+  if (loading) return <div>Loading...</div>;
+
   return (
     <>
       <HeroBanner />
       <div className="p-schedule">
         <div className="p-schedule_searchWrap">
-          <Text modifiers={["22x32", "coolBlack", '600']}>Search chuyến đi</Text>
+          <Text modifiers={["22x32", "coolBlack", "600"]}>
+            Search chuyến đi
+          </Text>
           <div className="p-schedule_searchWrap_search">
             <Input placeholder="Nhập điểm đến" />
             <Button>
@@ -69,7 +88,7 @@ export default function Schedule() {
           </div>
         </div>
         <div className="p-schedule_title">
-          <Text modifiers={["22x32", "coolBlack", '600']}>{title}</Text>
+          <Text modifiers={["22x32", "coolBlack", "600"]}>{title}</Text>
         </div>
         <div className="p-schedule_listSchedule">
           <table className="p-schedule_table">
@@ -87,41 +106,37 @@ export default function Schedule() {
             </tr>
           </table>
           <div className="p-schedule_table_body">
-            {dataList &&
-              dataList.length > 0 &&
-              dataList.map((item, index) => (
-                <table
-                  key={`list-place-${index.toString()}`}
-                  className="p-schedule_table_item"
-                >
+            {data &&
+              data?.length > 0 &&
+              data.map((item, index) => (
+                <table key={item?._id} className="p-schedule_table_item">
                   <thead className="p-schedule_table_thead">
                     <Text modifiers={["22x32", "600", "electricCrimson"]}>
-                      {item.addressFrom}
+                      {item?.name}
                     </Text>
                   </thead>
                   <tbody className="p-schedule_table_tbody">
-                    {item.addressEnd.map((ele, idx) => (
-                      <tr
-                        key={`item-placeEnd-${idx.toString()}`}
-                        className="p-schedule_table_tbody_tr"
-                      >
+                    {item?.data.map((ele, idx) => (
+                      <tr key={ele?._id} className="p-schedule_table_tbody_tr">
                         <th className="p-schedule_table_tbody_th">
-                          {ele.address}
+                          {ele?.to?.name}
                         </th>
                         <th className="p-schedule_table_tbody_th">
-                          {ele.type}
-                        </th>
-                        <th className="p-schedule_table_tbody_th">{ele.km}</th>
-                        <th className="p-schedule_table_tbody_th">
-                          {ele.time}
+                          {ele?.vehicle?.type}
                         </th>
                         <th className="p-schedule_table_tbody_th">
-                          <Link href={ele.linkDetail}>
+                          {ele?.distance}
+                        </th>
+                        <th className="p-schedule_table_tbody_th">
+                          {ele?.duration}
+                        </th>
+                        <th className="p-schedule_table_tbody_th">
+                          <Link href={ele?.linkDetail}>
                             <Text modifiers={["coolBlack"]}>Chi tiết</Text>
                           </Link>
                         </th>
                         <th className="p-schedule_table_tbody_th">
-                          <Link href={ele.linkBook}>
+                          <Link href={ele?.linkBook}>
                             <Button>
                               <Text modifiers={["white"]}>Đặt vé</Text>
                             </Button>
