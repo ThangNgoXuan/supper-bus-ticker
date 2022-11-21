@@ -5,6 +5,10 @@ const routesApi = {
     const url = "/route/type2";
     return axiosClient.get(url);
   },
+  getClientRoutes: () => {
+    const url = "/route/list";
+    return axiosClient.get(url);
+  },
   addNew: (data) => {
     const url = "/news";
     return axiosClient.post(url, data);
