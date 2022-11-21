@@ -7,6 +7,10 @@
     margin-top: rem(40);
   }
 
+  .a-link {
+    margin-top: rem(8);
+  }
+
   &_wrapContent {
     display: flex;
     &_header {
@@ -78,6 +82,15 @@
 
   &_allNews {
     margin-top: rem(40);
+    // .a-link {
+    //   display: flex;
+    // }
+
+    .a-link {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+    }
 
     &_listNew {
       display: flex;

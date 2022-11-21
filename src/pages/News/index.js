@@ -76,20 +76,24 @@ export default function News() {
           {data &&
             data.length > 0 &&
             data.slice(1, 5).map((item) => (
-              <div className="p-news_wrapContent_item" key={item?._id}>
-                <Image
-                  imgSrc={item?.thumbnail || "htpps://picsum.photos/200"}
-                  ratio="150x112"
-                />
-                <div className="p-news_wrapContent_item_content">
-                  <Text modifiers={["18x26", "outerSpace", "600", "uppercase"]}>
-                    {item?.title}
-                  </Text>
-                  <Text modifiers={["16x24", "outerSpace", "400"]}>
-                    {moment(item?.createdAt).format("DD/MM/YYYY")}
-                  </Text>
+              <Link href={item?.slug}>
+                <div className="p-news_wrapContent_item" key={item?._id}>
+                  <Image
+                    imgSrc={item?.thumbnail || "htpps://picsum.photos/200"}
+                    ratio="150x112"
+                  />
+                  <div className="p-news_wrapContent_item_content">
+                    <Text
+                      modifiers={["18x26", "outerSpace", "600", "uppercase"]}
+                    >
+                      {item?.title}
+                    </Text>
+                    <Text modifiers={["16x24", "outerSpace", "400"]}>
+                      {moment(item?.createdAt).format("DD/MM/YYYY")}
+                    </Text>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
         </div>
       </div>
@@ -102,6 +106,7 @@ export default function News() {
             data.length > 0 &&
             data.slice(0, 6).map((item) => (
               <div key={item._id} className="p-news_allNews_listNew_item">
+                <Link href={item?.slug} customClassName="qq">
                 <Image ratio="150x112" imgSrc={item?.thumbnail} />
                 <div className="p-news_allNews_listNew_item_content">
                   <Text modifiers={["16x18", "600", "coolBlack", "left"]}>
@@ -114,6 +119,7 @@ export default function News() {
                     {moment(item?.createdAt).format("DD/MM/YYYY")}
                   </Text>
                 </div>
+             </Link>
               </div>
             ))}
         </div>
