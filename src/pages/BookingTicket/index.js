@@ -158,6 +158,11 @@ export default function BookingTicket() {
   const [selectPrice, setSelectPrice] = useState();
   const [selectType, setSelectType] = useState();
 
+  // lấy list điểm đi là
+  // thêm bảng để search cho nhanh
+  // khi tạo điểm đi, thêm  số field dể search
+  //vẽ lại ĐB
+
   const dummyData = [
     {
       id: "1",
@@ -491,7 +496,7 @@ export default function BookingTicket() {
                     className={`p-bookingTicket_item_chairWrap_chair chair ${item.key}`}
                     key={item.key}
                   >
-                    <TbArmchair/>
+                    <TbArmchair />
                     <Text>{item.key}</Text>
                   </div>
                 ))}
