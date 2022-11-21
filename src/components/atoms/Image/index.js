@@ -14,7 +14,10 @@ const Ratio = [
   "160x76",
   "700x515",
   "425x285",
-  '895x590'
+  '895x590',
+  '936x233',
+  '538x382',
+  '150x112'
 ];
 const SizeImageType = ["cover" | "contain" | "inherit"];
 

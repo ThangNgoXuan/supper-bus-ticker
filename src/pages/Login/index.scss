@@ -1,0 +1,30 @@
+.p-login {
+    display: flex;
+    &_left {
+        width: 100%;
+        max-width: 50%;
+        flex: 0 0 50%;
+        padding: rem(80) rem(40);
+
+        &_link {
+            @include adjust-flex(space-between, center);
+
+            padding: rem(12) rem(20);
+
+            .a-link {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &_right {
+        width: 100%;
+        max-width: 50%;
+        flex: 0 0 50%;
+        background-image: url("https://picsum.photos/2000");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
