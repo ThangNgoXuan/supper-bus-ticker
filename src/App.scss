@@ -17,6 +17,7 @@
 //molecules
 @import './components/molecules/Pulldown/index.scss';
 @import './components/molecules/UploadFile/index.scss';
+@import './components/molecules/Loading/index.scss';
 
 //organisms
 @import './components/organisms/Header/index.scss';
@@ -43,6 +44,7 @@
 @import './pages/BookingTicket/index.scss';
 @import './pages/ScheduleDetail/index.scss';
 @import './pages/Position/index.scss';
+@import './pages/Login/index.scss';
 
 //css
 .app_content {

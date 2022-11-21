@@ -23,6 +23,10 @@ const routerPage = [
         path: '/ve-chung-toi',
         label: 'Về chúng tôi',
     },
+    {
+        path: '/dang-nhap',
+        label: 'Đăng nhập',
+    }
 ];
 
 export default routerPage;

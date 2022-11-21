@@ -9,6 +9,7 @@ import useFetch from "../../hooks/useFetch";
 import { useEffect } from "react";
 import newsApi from "../../api/newsApi";
 import routesApi from "../../api/routesApi";
+import { LoadingComponent } from "../../components/molecules/Loading";
 
 const title = "Tìm chuyến xe";
 const dataList = new Array(20).fill({
