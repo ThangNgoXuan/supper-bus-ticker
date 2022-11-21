@@ -1,133 +1,119 @@
 .p-news {
-  padding: rem(60);
   margin-left: auto;
   margin-right: auto;
-  padding-left: rem(16);
-  padding-right: rem(16);
+  padding: 0 rem(200);
 
-  @include small-mobile-up {
-    max-width: rem(540);
+  &_title {
+    margin-top: rem(40);
   }
-
-  @include mobile-up {
-    max-width: rem(720);
-  }
-
-  @include tablet-up {
-    max-width: rem(960);
-  }
-
-  @include desktop-up {
-    max-width: rem(1140);
-  }
-
-  @include break-min(1366px) {
-    max-width: 1366px;
-    padding-left: rem(120);
-    padding-right: rem(120);
-  }
-
 
   &_wrapContent {
+    display: flex;
     &_header {
-      margin-top: rem(40);
+      width: 100%;
+      max-width: 60%;
+      flex: 0 0 60%;
+      padding-right: rem(20);
       display: flex;
-      border: rem(1) solid $black016;
-      border-radius: rem(20);
+      flex-direction: column;
       cursor: pointer;
-      box-shadow: 0 rem(3) rem(6) $black016;
       transition: $transition;
+
+      &_time {
+        display: flex;
+        margin-top: rem(8);
+      }
 
       &:hover {
         transform: translateY(rem(-4));
       }
 
-      @include mobile-down{
-        flex-direction: column;
+      .a-image {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+    }
+
+    &_left {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 40%;
+      flex: 0 0 40%;
+    }
+
+    &_item {
+      display: flex;
+      margin-top: rem(10);
+      box-shadow: rem(5) rem(5) rem(5) rgb(0 0 0 / 3%);
+      transition: $transition;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      &:first-child {
+        margin-top: 0;
       }
 
       .a-image {
-        border-radius: rem(20);
+        width: 100%;
+        max-width: 50%;
+        flex: 0 0 50%;
+      }
+
+      &_content {
+        padding: rem(10);
         width: 100%;
         max-width: 50%;
         flex: 0 0 50%;
 
-        @include mobile-down {
-          max-width: 100%;
-          flex: 0 0 100%;
+        .a-text {
+          @include text-overflow();
         }
-      }
-    }
-
-    &_bottom {
-      margin-top: rem(40);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-columns: repeat(3, 1fr);
-      gap: rem(44);
-
-      @include tablet-down {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      @include mobile-down {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-columns: repeat(1, 1fr);
-        gap: rem(16);
       }
     }
   }
 
-  &_fistNews {
-    padding: rem(85) 0 rem(85) rem(54);
-    width: 100%;
-    max-width: 50%;
-    flex: 0 0 50%;
+  &_allNews {
+    margin-top: rem(40);
 
-    @include mobile-down {
-      max-width: 100%;
-      flex: 0 0 100%;
-      padding: rem(20);
-    }
+    &_listNew {
+      display: flex;
+      margin-top: rem(12);
+      flex-wrap: wrap;
 
-    &_spanBorder {
-      width: 50%;
-      height: rem(4);
-      background-color: $cool-black;
-      margin-top: rem(35);
-      @include mobile-down {
-        margin-top: rem(12);
+      &_item {
+        box-shadow: rem(5) rem(5) rem(5) rgb(0 0 0 / 3%);
+        padding: rem(10);
+        display: flex;
+        width: 100%;
+        max-width: 50%;
+        flex: 0 0 50%;
+        transition: $transition;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        .a-image {
+          width: 100%;
+          max-width: 30%;
+          flex: 0 0 30%;
+        }
+
+        &_content {
+          display: flex;
+          flex-direction: column;
+          padding-left: rem(8);
+        }
       }
-    }
 
-    &_description {
-      margin-top: rem(35);
-      @include text-overflow(4);
-      @include mobile-down {
-        margin-top: rem(12);
-      }
-    }
-
-    &_title {
-      margin-top: rem(15);
-      @include text-overflow(2);
-    }
-
-    &_more {
-      margin-top: rem(20);
-    }
-
-    &_time {
-      @include adjust-flex(flex-start, center);
-
-      svg {
-        margin-right: rem(8);
-      }
     }
   }
 
   &_pagination {
-    margin-top: rem(40);
+    margin: rem(20) 0;
   }
 }

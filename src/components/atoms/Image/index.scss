@@ -90,4 +90,16 @@
     &-895x590 {
         @include aspect-ratio(895, 590);
     }
+
+    &-936x233{
+        @include aspect-ratio(936, 233);
+    }
+
+    &-538x382{
+        @include aspect-ratio(538,382);
+    }
+
+    &-150x112{
+        @include aspect-ratio(150, 112);
+    }
 }
