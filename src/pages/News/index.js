@@ -23,6 +23,7 @@ export default function News() {
     /*eslint-disable-next-line */
   }, []);
 
+
   const settings = {
     arrows: true,
     autoplay: true,

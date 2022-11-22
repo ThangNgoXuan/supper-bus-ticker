@@ -123,171 +123,6 @@
       border: rem(1) solid $black016;
       border-radius: rem(8);
       margin: rem(20) auto;
-      display: flex;
-
-      // &_chair {
-      //   @include adjust-flex(center, center);
-      //   flex-direction: column;
-      //   width: rem(40);
-      //   height: rem(40);
-      //   position: relative;
-      //   color: $jet;
-      //   transition: $transition;
-      //   &:hover {
-      //     .a-text {
-      //       color: $white;
-      //     }
-
-      //     svg {
-      //       background-color: $cool-black;
-      //       color: white;
-      //     }
-      //   }
-
-      //   svg {
-      //     width: rem(40);
-      //     height: rem(40);
-      //     border-radius: rem(5);
-      //   }
-
-      //   .a-text {
-      //     position: absolute;
-      //     top: 40%;
-      //     left: 50%;
-      //     transform: translate(-50%, -50%);
-      //   }
-      // }
-    }
-
-    &_chairWrap {
-      padding: rem(40);
-      background-color: $ghost-white;
-      border: rem(1) solid $black016;
-      border-radius: rem(8);
-      margin: rem(20) auto;
-      display: grid;
-      gap: rem(10);
-      grid-template-areas:
-        "A1 A0 A2 A00 A3"
-        "A4 A0 A5 A00 A6"
-        "A7 A0 A8 A00 A9"
-        "A10 A0 A11 A00 A12"
-        "A13 A0 A14 A00 A15"
-        "A16 A0 A17 A00 A18"
-        "A19 A20 A21 A22 A23";
-
-      .chair {
-        @include adjust-flex(center, center);
-        flex-direction: column;
-        // width: rem(40);
-        // height: rem(40);
-        border-radius: rem(5);
-        position: relative;
-        color: $jet;
-        transition: $transition;
-
-        &:hover {
-          .a-text {
-            color: $white;
-          }
-
-          svg {
-            background-color: $cool-black;
-            color: white;
-          }
-        }
-
-        svg {
-          width: rem(60);
-          height: rem(60);
-        }
-
-        .a-text {
-          position: absolute;
-          top: 40%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-      }
-
-      .A0 {
-        grid-area: A0;
-      }
-
-      .A00 {
-        grid-area: A00;
-      }
-
-      // .A0 {
-      //   grid-area: A0;
-      // }
-
-      // .A1 {
-      //   grid-area: A1;
-      // }
-      // .A2 {
-      //   grid-area: A2;
-      // }
-      // .A3 {
-      //   grid-area: A3;
-      // }
-      // .A4 {
-      //   grid-area: A4;
-      // }
-      // .A5 {
-      //   grid-area: A5;
-      // }
-      // .A6 {
-      //   grid-area: A6;
-      // }
-      // .A7 {
-      //   grid-area: A7;
-      // }
-      // .A8 {
-      //   grid-area: A8;
-      // }
-      // .A9 {
-      //   grid-area: A9;
-      // }
-      // .A10 {
-      //   grid-area: A10;
-      // }
-
-
-
-
-      // &_chair {
-      //   @include adjust-flex(center, center);
-      //   flex-direction: column;
-      //   width: rem(40);
-      //   height: rem(40);
-      //   position: relative;
-      //   color: $jet;
-      //   transition: $transition;
-      //   &:hover {
-      //     .a-text {
-      //       color: $white;
-      //     }
-
-      //     svg {
-      //       background-color: $cool-black;
-      //       color: white;
-      //     }
-      //   }
-
-      //   svg {
-      //     width: rem(40);
-      //     height: rem(40);
-      //     border-radius: rem(5);
-      //   }
-
-      //   .a-text {
-      //     position: absolute;
-      //     top: 40%;
-      //     left: 50%;
-      //     transform: translate(-50%, -50%);
-      //   }
-      // }
     }
 
     &_statusWrap {
@@ -417,5 +252,113 @@
         }
       }
     }
+  }
+
+  &_bunk {
+    display: flex;
+    width: 100%;
+
+    &_floor1 {
+      width: 100%;
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 8px;
+      border-right: solid 1px black;
+      display: grid;
+      gap: rem(10);
+      grid-template-areas:
+        "A1 A0 A2 A00 A3"
+        "A4 A0 A5 A00 A6"
+        "A7 A0 A8 A00 A9"
+        "A10 A0 A11 A00 A12"
+        "A13 A0 A14 A00 A15"
+        "A16 A0 A000 A00 A17"
+        "A18 A19 A20 A21 A22";
+
+
+      .A0 {
+        grid-area: A0;
+      }
+
+      .A000 {
+        grid-area: A000;
+      }
+
+      .A00 {
+        grid-area: A00;
+      }
+    }
+
+    &_floor2 {
+      width: 100%;
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 8px;
+      display: grid;
+      gap: rem(10);
+      grid-template-areas:
+      "A1 A0 A2 A00 A3"
+      "A4 A0 A5 A00 A6"
+      "A7 A0 A8 A00 A9"
+      "A10 A0 A11 A00 A12"
+      "A13 A0 A14 A00 A15"
+      "A16 A0 A000 A00 A17"
+      "A18 A19 A20 A21 A22";
+
+      .A0 {
+        grid-area: A0;
+      }
+
+      .A000 {
+        grid-area: A000;
+      }
+
+      .A00 {
+        grid-area: A00;
+      }
+    }
+  }
+
+  &_chair {
+    @include adjust-flex(center, center);
+    flex-direction: column;
+    width: rem(60);
+    height: rem(60);
+    border-radius: rem(5);
+    position: relative;
+    color: $jet;
+    transition: $transition;
+
+    &:hover {
+      cursor: pointer;
+      .a-text {
+        color: $white;
+      }
+
+      svg {
+        border-radius: rem(5);
+        background-color: $cool-black;
+        color: white;
+      }
+    }
+
+    svg {
+      width: rem(65);
+      height: rem(65);
+      font-weight: 400;
+    }
+
+    .a-text {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &_false {
+    background-color: $cool-black;
+    pointer-events: none;
+    color: $white;
   }
 }
