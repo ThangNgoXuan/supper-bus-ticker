@@ -262,34 +262,60 @@
       width: 100%;
       flex: 0 0 50%;
       max-width: 50%;
-      // background-color: red;
-      display: grid;
       padding: 8px;
+      border-right: solid 1px black;
+      display: grid;
       gap: rem(10);
       grid-template-areas:
-        "A01 A0 A02 A00 A3"
-        "A04 A0 A05 A00 A6"
-        "A07 A0 A08 A00 A9"
-        "A10 A0 A011 A00 A12"
-        "A13 A0 A014 A00 A15"
-        "A16 A0 A017 A00 A18"
-        "A19 A20 A21 A22 ";
+        "A1 A0 A2 A00 A3"
+        "A4 A0 A5 A00 A6"
+        "A7 A0 A8 A00 A9"
+        "A10 A0 A11 A00 A12"
+        "A13 A0 A14 A00 A15"
+        "A16 A0 A000 A00 A17"
+        "A18 A19 A20 A21 A22";
+
+
+      .A0 {
+        grid-area: A0;
+      }
+
+      .A000 {
+        grid-area: A000;
+      }
+
+      .A00 {
+        grid-area: A00;
+      }
     }
 
     &_floor2 {
       width: 100%;
       flex: 0 0 50%;
       max-width: 50%;
-      padding: 8;
-      // background-color: blue;
+      padding: 8px;
+      display: grid;
+      gap: rem(10);
       grid-template-areas:
-        "B01 A0 B02 B00 A3"
-        "B04 B0 B05 B00 B6"
-        "B07 B0 B08 B00 B9"
-        "B10 B0 B011 B00 B12"
-        "B13 B0 B014 B00 B15"
-        "B16 B0 B017 B00 B18"
-        "B19 B20 B21 B22 ";
+      "A1 A0 A2 A00 A3"
+      "A4 A0 A5 A00 A6"
+      "A7 A0 A8 A00 A9"
+      "A10 A0 A11 A00 A12"
+      "A13 A0 A14 A00 A15"
+      "A16 A0 A000 A00 A17"
+      "A18 A19 A20 A21 A22";
+
+      .A0 {
+        grid-area: A0;
+      }
+
+      .A000 {
+        grid-area: A000;
+      }
+
+      .A00 {
+        grid-area: A00;
+      }
     }
   }
 
@@ -304,19 +330,22 @@
     transition: $transition;
 
     &:hover {
+      cursor: pointer;
       .a-text {
         color: $white;
       }
 
       svg {
+        border-radius: rem(5);
         background-color: $cool-black;
         color: white;
       }
     }
 
     svg {
-      width: rem(60);
-      height: rem(60);
+      width: rem(65);
+      height: rem(65);
+      font-weight: 400;
     }
 
     .a-text {
@@ -328,7 +357,8 @@
   }
 
   &_false {
-    background-color: red;
+    background-color: $cool-black;
     pointer-events: none;
+    color: $white;
   }
 }

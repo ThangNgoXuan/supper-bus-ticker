@@ -307,8 +307,8 @@ export default function BookingTicket() {
                                 </Text>
                               </div>
                               <div className="p-bookingTicket_item_choose">
-                                <Text>Chọn</Text>
-                                <input type="checkbox" />
+                                {/* <Text>Chọn</Text>
+                                <input type="checkbox" /> */}
                               </div>
                             </div>
                             <div className="p-bookingTicket_item_bookingWrap">
@@ -316,6 +316,9 @@ export default function BookingTicket() {
                                 {item?.seat_diagram[0]?.type == "bunk" && (
                                   <div className="p-bookingTicket_bunk">
                                     <div className="p-bookingTicket_bunk_floor1">
+                                      <div className="A0"/>
+                                      <div className="A000"/>
+                                      <div className="A00"/>
                                       {item?.seat_diagram[0]?.schema?.floor1?.map(
                                         (ele) => (
                                           <div
@@ -329,18 +332,36 @@ export default function BookingTicket() {
                                       )}
                                     </div>
                                     <div className="p-bookingTicket_bunk_floor2">
+                                    <div className="A0"/>
+                                      <div className="A000"/>
+                                      <div className="A00"/>
                                       {item?.seat_diagram[0]?.schema?.floor2?.map(
                                         (ele) => (
                                           <div
-                                            className={`p-bookingTicket_chair ${ele?.name} p-bookingTicket_${ele?.status}`}
+                                            className={`p-bookingTicket_chair ${ele?.name}  p-bookingTicket_${ele?.status}`}
                                             key={`${item?._id.toString()}-floot2-${ele?.name.toString()}`}
                                           >
                                             <TbArmchair />
-                                            <Text>{ele?.name}</Text>
+                                            <Text modifiers={['500',]}>{ele?.name}</Text>
                                           </div>
                                         )
                                       )}
                                     </div>
+                                    {/* <div className="p-bookingTicket_bunk_floor2">
+                                      <div className="B0"/>
+                                      <div className="B00"/>
+                                      {item?.seat_diagram[0]?.schema?.floor2?.map(
+                                        (ele) => (
+                                          <div
+                                            className={`p-bookingTicket_chair ${ele?.name}  p-bookingTicket_${ele?.status}`}
+                                            key={`${item?._id.toString()}-floot1-${ele?.name.toString()}`}
+                                          >
+                                            <TbArmchair />
+                                            <Text modifiers={['500',]}>{ele?.name}</Text>
+                                          </div>
+                                        )
+                                      )}
+                                    </div> */}
 
                                   </div>
                                 )}
