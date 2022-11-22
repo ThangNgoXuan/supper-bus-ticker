@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { TbArmchair } from "react-icons/tb";
 import Button from "../../components/atoms/Button";
@@ -14,6 +14,9 @@ import { Controller, FormProvider, useForm } from "react-hook-form";
 import { booking } from "../../utils/schema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import InputDate from "../../components/atoms/InputDate";
+import tripApi from "../../api/tripApi";
+import useFetch from "../../hooks/useFetch";
+import moment from "moment";
 
 const data = new Array(5).fill({
   timeGo: "08:00",
@@ -158,6 +161,16 @@ export default function BookingTicket() {
   const [selectPrice, setSelectPrice] = useState();
   const [selectType, setSelectType] = useState();
 
+  const [loadingTrip, dataTrip, _Trip, fetchTrip, refetchTrip] = useFetch(
+    { status: true },
+    tripApi.getAllTrip
+  );
+
+  useEffect(() => {
+    fetchTrip({}, true);
+    /*eslint-disable-next-line */
+  }, []);
+
   // lấy list điểm đi là
   // thêm bảng để search cho nhanh
   // khi tạo điểm đi, thêm  số field dể search
@@ -203,7 +216,7 @@ export default function BookingTicket() {
         <Text modifiers={["600", "32x48", "coolBlack"]}>Đặt vé</Text>
       </div>
       <div className="p-bookingTicket_body">
-        <dib className="p-bookingTicket_tabWrap">
+        <div className="p-bookingTicket_tabWrap">
           <Tabs variableMutate={indexActive}>
             {dummyData.map((item, index) => (
               <Tab
@@ -260,11 +273,11 @@ export default function BookingTicket() {
                   />
                 </div>
               </div>
-              {data ? (
-                data.length > 0 && (
+              {dataTrip ? (
+                dataTrip.length > 0 && (
                   <>
                     <div className="p-bookingTicket_route_routes">
-                      {data.map((item, index) => (
+                      {dataTrip.map((item, index) => (
                         <div
                           className="p-bookingTicket_item"
                           key={`item-routes-${index.toString()}`}
@@ -272,19 +285,25 @@ export default function BookingTicket() {
                           <div className="p-bookingTicket_item_header">
                             <div className="p-bookingTicket_item_time">
                               <Text modifiers={["400", "24x34", "jet"]}>
-                                {item.timeGo}
-                              </Text>{" "}
+                                {moment(item?.start?.intend_time).format(
+                                  "HH:mm"
+                                )}
+                              </Text>
                               <AiOutlineArrowRight />{" "}
                               <Text modifiers={["400", "24x34", "jet"]}>
-                                {item.timeEnd}
+                                {moment(item?.end?.intend_time).format("HH:mm")}
                               </Text>
                             </div>
                             <div className="p-bookingTicket_item_typeWrap">
                               <div className="p-bookingTicket_item_type">
-                                <Text modifiers={["14x18"]}>{item.price}</Text>
-                                <Text modifiers={["14x18"]}>{item.type}</Text>
                                 <Text modifiers={["14x18"]}>
-                                  {item.remaining}
+                                  {item?.price} VNĐ
+                                </Text>
+                                <Text modifiers={["14x18"]}>
+                                  {item?.seat_diagram[0]?.name}
+                                </Text>
+                                <Text modifiers={["14x18"]}>
+                                  {/* {item?.remaining} */}
                                 </Text>
                               </div>
                               <div className="p-bookingTicket_item_choose">
@@ -294,12 +313,37 @@ export default function BookingTicket() {
                             </div>
                             <div className="p-bookingTicket_item_bookingWrap">
                               <div className="p-bookingTicket_item_chairWrap">
-                                {listChair.map((item, index) => (
-                                  <div className="p-bookingTicket_item_chairWrap_chair">
-                                    {item.div}
-                                    <Text>{index}</Text>
+                                {item?.seat_diagram[0]?.type == "bunk" && (
+                                  <div className="p-bookingTicket_bunk">
+                                    <div className="p-bookingTicket_bunk_floor1">
+                                      {item?.seat_diagram[0]?.schema?.floor1?.map(
+                                        (ele) => (
+                                          <div
+                                            className={`p-bookingTicket_chair ${ele?.name}  p-bookingTicket_${ele?.status}`}
+                                            key={`${item?._id.toString()}-floot1-${ele?.name.toString()}`}
+                                          >
+                                            <TbArmchair />
+                                            <Text modifiers={['500',]}>{ele?.name}</Text>
+                                          </div>
+                                        )
+                                      )}
+                                    </div>
+                                    <div className="p-bookingTicket_bunk_floor2">
+                                      {item?.seat_diagram[0]?.schema?.floor2?.map(
+                                        (ele) => (
+                                          <div
+                                            className={`p-bookingTicket_chair ${ele?.name} p-bookingTicket_${ele?.status}`}
+                                            key={`${item?._id.toString()}-floot2-${ele?.name.toString()}`}
+                                          >
+                                            <TbArmchair />
+                                            <Text>{ele?.name}</Text>
+                                          </div>
+                                        )
+                                      )}
+                                    </div>
+
                                   </div>
-                                ))}
+                                )}
                               </div>
                               <div className="p-bookingTicket_item_statusWrap">
                                 <div className="p-bookingTicket_item_seleted">
@@ -488,32 +532,8 @@ export default function BookingTicket() {
                 Quay lại
               </Button>
             </div>
-
-            <div className="p-bookingTicket_item_bookingWrap">
-              <div className="p-bookingTicket_item_chairWrap">
-                {listSchema.map((item) => (
-                  <div
-                    className={`p-bookingTicket_item_chairWrap_chair chair ${item.key}`}
-                    key={item.key}
-                  >
-                    <TbArmchair />
-                    <Text>{item.key}</Text>
-                  </div>
-                ))}
-              </div>
-              <div className="p-bookingTicket_item_statusWrap">
-                <div className="p-bookingTicket_item_seleted">
-                  <div />
-                  <Text>Đã chọn</Text>
-                </div>
-                <div className="p-bookingTicket_item_seleted p-bookingTicket_item_notyet">
-                  <div />
-                  <Text modifiers={["coolBlack"]}>Chưa chọn</Text>
-                </div>
-              </div>
-            </div>
           </TabPanel>
-        </dib>
+        </div>
       </div>
     </div>
   );
