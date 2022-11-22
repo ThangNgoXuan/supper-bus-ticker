@@ -1,0 +1,33 @@
+.p-user {
+  padding: 80px 200px;
+
+  &_profile {
+    margin-top: rem(20);
+    .a-image {
+      width: rem(100);
+      height: rem(100);
+      border-radius: 50%;
+    }
+    display: flex;
+    align-items: center;
+  }
+
+  &_info {
+    margin-left: rem(20);
+
+    .a-text {
+        margin-top: rem(8);
+    }
+  }
+
+  &_history {
+    margin-top: rem(40);
+
+    &_booking {
+        width: 100%;
+        border-radius: rem(5);
+        border: rem(1) solid black;
+    }
+  }
+}
+

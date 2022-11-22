@@ -18,6 +18,7 @@ import Login from "./pages/Login";
 import ForwardPass from "./pages/ForwardPass";
 import SignUp from "./pages/SignUp";
 import UpdatePass from "./pages/UpdatePass";
+import User from "./pages/User";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route exact path="/chi-tiet-chuyen-xe" element={<ScheduleDetail/>}/>
           <Route exact path="/vi-tri-xe" element={<Position/>}/>
           <Route exact path="/dang-nhap" element={<Login/>}/>
+          <Route exact path="/nguoi-dung" element={<User/>}/>
           <Route exact path="/cap-nhat-mat-khau" element={<UpdatePass/>}/>
           <Route path="/*" element={<NotFound />}/>
         </Routes>

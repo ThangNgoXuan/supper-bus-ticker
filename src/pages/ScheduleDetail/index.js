@@ -79,7 +79,9 @@ export default function ScheduleDetail() {
       </div>
       <div className="p-scheduleDetail_detail">
         <div className="p-scheduleDetail_detail_name">
-          <Text modifiers={["coolBlack", "600", "16x42", "uppercase"]}>{scheduleDetail.name}</Text>
+          <Text modifiers={["coolBlack", "600", "16x42", "uppercase"]}>
+            {scheduleDetail.name}
+          </Text>
         </div>
         <div className="p-scheduleDetail_detail_body">
           <div className="p-scheduleDetail_detail_tableDetail">
@@ -103,10 +105,10 @@ export default function ScheduleDetail() {
                       className="p-scheduleDetail_detail_tableDetail_table_tr"
                     >
                       <th className="p-scheduleDetail_detail_tableDetail_table_th">
-                        <Text modifiers={["15x42", '400']}>{item.time}</Text>
+                        <Text modifiers={["15x42", "400"]}>{item.time}</Text>
                       </th>
                       <th className="p-scheduleDetail_detail_tableDetail_table_th">
-                        <Text modifiers={["15x42", '400']}>{item.address}</Text>
+                        <Text modifiers={["15x42", "400"]}>{item.address}</Text>
                       </th>
                     </tr>
                   ))}
@@ -118,7 +120,7 @@ export default function ScheduleDetail() {
           </div>
           <div className="p-scheduleDetail_detail_time">
             <div className="p-scheduleDetail_time_chooseTime">
-              <InputDate/>
+              <InputDate />
               <Text>Chọn ngày đi</Text>
             </div>
             <table className="p-scheduleDetail_time_table">
