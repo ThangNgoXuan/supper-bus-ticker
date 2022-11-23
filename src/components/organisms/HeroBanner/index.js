@@ -59,7 +59,6 @@ export default function HeroBanner() {
   };
 
   const handleReset = () => {
-    customRoutes(values.listRoutes);
     setValues({
       selectedFrom: {
         label: values?.listRoutes[0].from?.name,
@@ -69,6 +68,7 @@ export default function HeroBanner() {
         label: values?.listRoutes[0].to?.name,
         value: values?.listRoutes[0].to?._id,
       },
+      listRoutesCustom: customRoutes(values.listRoutes),
     });
   };
 
@@ -132,7 +132,7 @@ export default function HeroBanner() {
       values.selectedTo.value
     );
     let date = moment(values.selectedTime).format("YYYY-MM-DD");
-    navigate("/dat-ve");
+    navigate(`/dat-ve?date=${date}&route=${idRoute._id}`);
   };
 
   return (
@@ -144,6 +144,7 @@ export default function HeroBanner() {
         </Text>
         <div className="o-heroBanner_search">
           <div className="o-heroBanner_search_select">
+            <Text modifiers={['center', '600']}>Điểm đến</Text>
             <Select
               onChange={(seleted) => handleSelectRoute(seleted, "from")}
               options={values.listRoutesCustom.from}
@@ -151,6 +152,7 @@ export default function HeroBanner() {
             />
           </div>
           <div className="o-heroBanner_search_select">
+            <Text modifiers={['center','600']}>Điểm đi</Text>
             <Select
               onChange={(seleted) => handleSelectRoute(seleted, "to")}
               options={values.listRoutesCustom.to}
@@ -158,6 +160,7 @@ export default function HeroBanner() {
             />
           </div>
           <div className="o-heroBanner_search_select">
+            <Text modifiers={['center', '600']}>Ngày đi</Text>
             <ReactDatePicker
               dateFormat="dd/MM/yyyy"
               selected={values.selectedTime}

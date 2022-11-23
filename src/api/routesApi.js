@@ -9,10 +9,10 @@ const routesApi = {
     const url = "/route/list";
     return axiosClient.get(url);
   },
-  findTrip: (id,date) => {
-    const url = `/trip?filter_date=${date}&route=${id}`
+  getAllRoute: () => {
+    const url = "/route";
     return axiosClient.get(url);
-  }
+  },
 };
 
 export default routesApi;

@@ -17,121 +17,8 @@ import InputDate from "../../components/atoms/InputDate";
 import tripApi from "../../api/tripApi";
 import useFetch from "../../hooks/useFetch";
 import moment from "moment";
-
-const data = new Array(5).fill({
-  timeGo: "08:00",
-  timeEnd: "12:00",
-  price: "200.000",
-  type: "limousine",
-  remaining: 32,
-});
-
-const listChair = new Array(10).fill({
-  div: <TbArmchair />,
-});
-
-const listSchema = [
-  {
-    key: "A0",
-    status: true,
-  },
-  {
-    key: "A00",
-    status: true,
-  },
-  {
-    key: "A1",
-    status: true,
-  },
-  {
-    key: "A2",
-    status: true,
-  },
-  {
-    key: "A3",
-    status: true,
-  },
-  {
-    key: "A4",
-    status: true,
-  },
-  {
-    key: "A5",
-    status: true,
-  },
-  {
-    key: "A6",
-    status: true,
-  },
-  {
-    key: "A7",
-    status: true,
-  },
-  {
-    key: "A8",
-    status: true,
-  },
-  {
-    key: "A9",
-    status: true,
-  },
-  {
-    key: "A10",
-    status: true,
-  },
-  {
-    key: "A11",
-    status: true,
-  },
-  {
-    key: "A12",
-    status: true,
-  },
-  {
-    key: "A13",
-    status: true,
-  },
-  {
-    key: "A14",
-    status: true,
-  },
-  {
-    key: "A15",
-    status: true,
-  },
-  {
-    key: "A16",
-    status: true,
-  },
-  {
-    key: "A17",
-    status: true,
-  },
-  {
-    key: "A18",
-    status: true,
-  },
-  {
-    key: "A19",
-    status: true,
-  },
-  {
-    key: "A20",
-    status: true,
-  },
-  {
-    key: "A21",
-    status: true,
-  },
-  {
-    key: "A22",
-    status: true,
-  },
-  {
-    key: "A23",
-    status: true,
-  },
-];
+import { useSearchParams } from "react-router-dom";
+import useValues from "../../hooks/useValues";
 
 const ticketInfo = {
   name: "Ngô Xuân Thắng",
@@ -160,11 +47,42 @@ export default function BookingTicket() {
   const [indexActive, setIndexActive] = useState(0);
   const [selectPrice, setSelectPrice] = useState();
   const [selectType, setSelectType] = useState();
+  let [searchParams] = useSearchParams();
+  const [values, setValues] = useValues({
+    dateUrl: searchParams.get("date"),
+    idRoute: searchParams.get("route"),
+    dataFindTrip: [],
+  });
 
   const [loadingTrip, dataTrip, _Trip, fetchTrip, refetchTrip] = useFetch(
     { status: true },
     tripApi.getAllTrip
   );
+
+  useEffect(() => {
+    tripApi.findTrip(values.dateUrl,values.idRoute).then((res) => {
+      if (res?.status) {
+        setValues({
+          dataFindTrip: res?.data
+        })
+      }
+    })
+    .catch((err) => console.log("err", err))
+  }, []);
+
+  console.log("qq", values.dateUrl + "aaaa" + values.idRoute)
+  console.log(searchParams)
+  console.log("aaaaa",values.dataFindTrip);
+
+
+
+  // const [
+  //   loadingFindTrip,
+  //   dataFindTrip,
+  //   _TripFindTrip,
+  //   fetchTripFindTrip,
+  //   refetchTripFindTrip,
+  // ] = useFetch({values.dateUrl, values.idRoute}, tripApi.findTrip);
 
   useEffect(() => {
     fetchTrip({}, true);
@@ -316,9 +234,9 @@ export default function BookingTicket() {
                                 {item?.seat_diagram[0]?.type == "bunk" && (
                                   <div className="p-bookingTicket_bunk">
                                     <div className="p-bookingTicket_bunk_floor1">
-                                      <div className="A0"/>
-                                      <div className="A000"/>
-                                      <div className="A00"/>
+                                      <div className="A0" />
+                                      <div className="A000" />
+                                      <div className="A00" />
                                       {item?.seat_diagram[0]?.schema?.floor1?.map(
                                         (ele) => (
                                           <div
@@ -326,15 +244,17 @@ export default function BookingTicket() {
                                             key={`${item?._id.toString()}-floot1-${ele?.name.toString()}`}
                                           >
                                             <TbArmchair />
-                                            <Text modifiers={['500',]}>{ele?.name}</Text>
+                                            <Text modifiers={["500"]}>
+                                              {ele?.name}
+                                            </Text>
                                           </div>
                                         )
                                       )}
                                     </div>
                                     <div className="p-bookingTicket_bunk_floor2">
-                                    <div className="A0"/>
-                                      <div className="A000"/>
-                                      <div className="A00"/>
+                                      <div className="A0" />
+                                      <div className="A000" />
+                                      <div className="A00" />
                                       {item?.seat_diagram[0]?.schema?.floor2?.map(
                                         (ele) => (
                                           <div
@@ -342,7 +262,9 @@ export default function BookingTicket() {
                                             key={`${item?._id.toString()}-floot2-${ele?.name.toString()}`}
                                           >
                                             <TbArmchair />
-                                            <Text modifiers={['500',]}>{ele?.name}</Text>
+                                            <Text modifiers={["500"]}>
+                                              {ele?.name}
+                                            </Text>
                                           </div>
                                         )
                                       )}
@@ -362,7 +284,6 @@ export default function BookingTicket() {
                                         )
                                       )}
                                     </div> */}
-
                                   </div>
                                 )}
                               </div>

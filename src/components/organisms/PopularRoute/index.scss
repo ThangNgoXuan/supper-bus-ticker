@@ -1,72 +1,72 @@
 .o-popularRoute {
-    padding: rem(16);
-    width: 80%;
-    margin: 0 auto;
+  padding: rem(16);
+  width: 100%;
+  margin: 0 auto;
 
-    @include tablet-down {
-        width: 90%;
+  @include tablet-down {
+    width: 90%;
+  }
+
+  @include mobile-down {
+    width: 100%;
+  }
+
+  &_title {
+    margin-top: rem(8);
+  }
+
+  &_listPlace {
+    margin-top: rem(20);
+    display: flex;
+    flex-wrap: wrap;
+
+    span {
+      width: 100%;
+      max-width: 50%;
+      flex: 0 0 50%;
+
+      @include mobile-down {
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
     }
 
-    @include mobile-down {
-        width: 100%;
+    &_item {
+      width: 100%;
+      display: flex;
+      margin-bottom: rem(12);
+      padding-right: rem(16);
+      transition: $transition;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(rem(-8));
+      }
     }
 
-    &_title {
-        margin-top: rem(8);
+    &_left {
+      width: calc((160 / 437));
+      .a-image {
+        height: 100%;
+        width: rem(160);
+        border-radius: rem(12) 0 0 rem(12);
+      }
     }
 
-    &_listPlace {
-        margin-top: rem(20);
-        display: flex;
-        flex-wrap: wrap;
-
-        .a-link {
-            width: 100%;
-            max-width: 50%;
-            flex: 0 0 50%;
-
-            @include mobile-down {
-                max-width: 100%;
-                flex: 0 0 100%;
-            }
-        }
-
-        &_item {
-            width: 100%;
-            display: flex;
-            margin-bottom: rem(12);
-            padding-right: rem(16);
-            transition: $transition;
-            cursor: pointer;
-            
-            &:hover {
-                transform: translateY(rem(-8));
-            }
-        }
-
-        &_left {
-            width: calc((160/437));
-            .a-image {
-                height: 100%;
-                width: rem(160);
-                border-radius: rem(12) 0 0 rem(12);
-            }
-        }
-
-        &_right {
-            background-color: $snow;
-            @include adjust-flex(space-between, unset);
-            flex-direction: column;
-            width: 100%;
-            padding: rem(12);
-            border: rem(1) solid $cadmiumgreen01;
-            border-radius: 0 rem(12) rem(12) 0;
-            border-left: 0;
-            box-shadow: rem(1) rem(2) rem(4) 0 rgb(0 0 0/30%);
-        }
-
-        &_content {
-            @include adjust-flex(space-between, center)            
-        }
+    &_right {
+      background-color: $snow;
+      @include adjust-flex(space-between, unset);
+      flex-direction: column;
+      width: 100%;
+      padding: rem(12);
+      border: rem(1) solid $cadmiumgreen01;
+      border-radius: 0 rem(12) rem(12) 0;
+      border-left: 0;
+      box-shadow: rem(1) rem(2) rem(4) 0 rgb(0 0 0/30%);
     }
+
+    &_content {
+      @include adjust-flex(space-between, center);
+    }
+  }
 }

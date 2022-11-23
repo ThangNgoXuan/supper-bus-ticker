@@ -8,7 +8,7 @@ import moment from "moment";
 
 export default function NewsDetail() {
   const { slug } = useParams();
-  const [loading, data, _, fetch, refetch] = useFetch({slug}, 
+  const [loading, data, _, fetch, refetch] = useFetch({slug},
     newsApi.findBySlug);
 
   useEffect(() => {
