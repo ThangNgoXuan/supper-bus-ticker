@@ -8,7 +8,6 @@
     justify-content: center;
     flex-direction: column;
 
-
     &_search {
         width: 100%;
         display: flex;
@@ -16,19 +15,20 @@
         background-color: $white;
         align-items: center;
         box-shadow: 4px 4px 20px 1px hsl(0deg 0% 55% / 40%);
-        border-radius: rem(8    );
+        border-radius: rem(8);
         padding: 20px;
         position: relative;
+
         &_select {
             padding: rem(20);
             border: 0.5px solid #dce1e6;
             border-radius: rem(5);
-            margin: 0 rem(4); 
+            margin: 0 rem(4);
             width: rem(260);
 
             .react-datepicker__input-container {
                 height: rem(38);
-                
+
                 input {
                     height: 100%;
                     width: 100%;
@@ -38,15 +38,17 @@
             }
         }
 
-        .a-button {
-            width: fit-content;
+        &_btn {
+            display: flex;
             position: absolute;
             bottom: 0;
             right: 0;
-            transform: translate(50%,50%);
+            transform: translate(20%, 50%);
+
+            .a-button {
+                width: fit-content;
+            }
         }
+
     }
-
-
-
 }

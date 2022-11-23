@@ -7,6 +7,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-select";
 import useValues from "../../../hooks/useValues";
 import routesApi from "../../../api/routesApi";
+import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroBanner() {
   const [values, setValues] = useValues({
@@ -17,9 +19,7 @@ export default function HeroBanner() {
     listRoutesCustom: [],
   });
 
-  function handleChange(selectedOption) {
-    setValues({ selectedOption });
-  }
+  const navigate = useNavigate();
 
   useEffect(() => {
     routesApi.getClientRoutes().then((res) => {
@@ -58,7 +58,19 @@ export default function HeroBanner() {
     return { from, to };
   };
 
-  const handleReset = () => {};
+  const handleReset = () => {
+    customRoutes(values.listRoutes);
+    setValues({
+      selectedFrom: {
+        label: values?.listRoutes[0].from?.name,
+        value: values?.listRoutes[0].from?._id,
+      },
+      selectedTo: {
+        label: values?.listRoutes[0].to?.name,
+        value: values?.listRoutes[0].to?._id,
+      },
+    });
+  };
 
   const handleChoose = (type, value) => {
     let from = values.listRoutesCustom.from;
@@ -68,7 +80,7 @@ export default function HeroBanner() {
         .filter((item) => item.from._id === value.value)
         .map((item2) => ({
           label: item2?.to?.name,
-          value: item2?.to?.id,
+          value: item2?.to?._id,
         }));
       setValues({
         listRoutesCustom: {
@@ -80,7 +92,7 @@ export default function HeroBanner() {
         .filter((item) => item.to._id === value.value)
         .map((item2) => ({
           label: item2?.from?.name,
-          value: item2?.from?.id,
+          value: item2?.from?._id,
         }));
       setValues({
         listRoutesCustom: {
@@ -115,10 +127,12 @@ export default function HeroBanner() {
   };
 
   const handleSearch = () => {
-    return selectRoutesByPoints(
+    let idRoute = selectRoutesByPoints(
       values.selectedFrom.value,
       values.selectedTo.value
     );
+    let date = moment(values.selectedTime).format("YYYY-MM-DD");
+    navigate("/dat-ve");
   };
 
   return (
@@ -149,12 +163,15 @@ export default function HeroBanner() {
               selected={values.selectedTime}
               onChange={(date) => setValues({ selectedTime: date })}
             />
-            <Button handleClick={() => handleReset()}><Text>Reset tìm kiếm</Text></Button>
           </div>
-
-          <Button>
-            <Text modifiers={["uppercase"]}>Tìm kiếm</Text>
-          </Button>
+          <div className="o-heroBanner_search_btn">
+            <Button handleClick={() => handleReset()}>
+              <Text modifiers={["white"]}>Reset tìm kiếm</Text>
+            </Button>
+            <Button handleClick={() => handleSearch()}>
+              <Text modifiers={["uppercase"]}>Tìm kiếm</Text>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
