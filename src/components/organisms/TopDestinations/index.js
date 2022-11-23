@@ -3,7 +3,6 @@ import Text from "../../atoms/Text";
 import Slider from "react-slick";
 import Image from "../../atoms/Image";
 import Link from "../../atoms/Link";
-import useValues from "../../../hooks/useValues";
 import { useEffect } from "react";
 import commonApi from "../../../api/commonApi";
 import { useState } from "react";
@@ -36,8 +35,6 @@ const settings = {
 
 export default function TopDestination() {
   const [topPalces, setTopPlaces] = useState([]);
-  console.log(topPalces);
-
   useEffect(() => {
     commonApi
       .getPopularPlaces()

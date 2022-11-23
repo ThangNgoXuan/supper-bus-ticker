@@ -95,6 +95,11 @@
         @include aspect-ratio(936, 233);
     }
 
+    &-1024x255{
+        @include aspect-ratio(1024, 255);
+    }
+
+
     &-538x382{
         @include aspect-ratio(538,382);
     }

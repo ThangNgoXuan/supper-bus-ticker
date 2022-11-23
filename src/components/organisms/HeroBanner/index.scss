@@ -1,34 +1,49 @@
 .o-heroBanner {
-    background-image: url("https://picsum.photos/1200/300");
     width: 100%;
-    height: calc(100vh - 86px);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
-    &_content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        @include adjust-flex();
-        flex-direction: column;
-    }
 
     &_search {
         width: 100%;
         display: flex;
-        margin-top: rem(40);
+        margin: rem(12) 0 rem(20);
         background-color: $white;
+        align-items: center;
+        box-shadow: 4px 4px 20px 1px hsl(0deg 0% 55% / 40%);
+        border-radius: rem(8    );
+        padding: 20px;
+        position: relative;
+        &_select {
+            padding: rem(20);
+            border: 0.5px solid #dce1e6;
+            border-radius: rem(5);
+            margin: 0 rem(4); 
+            width: rem(260);
 
-        .a-input_input {
-            border-radius: 0;
+            .react-datepicker__input-container {
+                height: rem(38);
+                
+                input {
+                    height: 100%;
+                    width: 100%;
+                    border: 0.5px solid #dce1e6;
+                    border-radius: rem(5);
+                }
+            }
         }
 
         .a-button {
             width: fit-content;
-            border-radius: 0;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(50%,50%);
         }
     }
 
