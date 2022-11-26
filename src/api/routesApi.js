@@ -13,6 +13,10 @@ const routesApi = {
     const url = "/route";
     return axiosClient.get(url);
   },
+  findRouteById: (id) => {
+    const url = `/route/${id}`;
+    return axiosClient.get(url);
+  },
 };
 
 export default routesApi;

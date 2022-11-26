@@ -75,7 +75,6 @@ export default function Schedule() {
 
   return (
     <>
-      <HeroBanner />
       <div className="p-schedule">
         <div className="p-schedule_searchWrap">
           <Text modifiers={["22x32", "coolBlack", "600"]}>

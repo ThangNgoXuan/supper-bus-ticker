@@ -10,7 +10,7 @@ import routesApi from "../../../api/routesApi";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 
-export default function HeroBanner() {
+export default function HeroBanner(data) {
   const [values, setValues] = useValues({
     selectedFrom: "",
     selectedTo: "",
@@ -38,7 +38,12 @@ export default function HeroBanner() {
         });
       }
     });
+
+    if(data) {
+      console.log('dataqq', data)
+    }
   }, []);
+
 
   const customRoutes = (routes) => {
     let from = [];

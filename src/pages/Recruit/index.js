@@ -19,7 +19,6 @@ const dataJob = new Array(10).fill({
 export default function Recruit() {
   return (
     <>
-      <HeroBanner />
       <div className="p-recruit">
         <div className="p-recruit_header">
           <div className="p-recruit_header_title">

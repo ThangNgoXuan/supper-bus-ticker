@@ -5,21 +5,15 @@ import Link from "../../atoms/Link";
 import useValues from "../../../hooks/useValues";
 import { useEffect } from "react";
 import routesApi from "../../../api/routesApi";
+import { useNavigate } from "react-router-dom";
 
 const title = "tuyến phổ biến";
-const listPlace = new Array(8).fill({
-  title: "ha noi => ho chi minh",
-  imgSrc: "https://picsum.photos/200",
-  times: "8h",
-  priceTicket: "300.000 đ",
-  distance: "300 km",
-  path: "tin-chi-tiet",
-});
-
 export default function PopularRoute() {
   const [values, setValues] = useValues({
     data: [],
   });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     routesApi.getAllRoute().then((res) => {
@@ -30,6 +24,10 @@ export default function PopularRoute() {
   }, []);
 
   console.log("data", values.data);
+
+  const handleRedirect = (data) => {
+    navigate(`/dat-ve?date=2022-10-10&route=${data._id}`);
+  };
 
   return (
     <div className="o-popularRoute">
@@ -53,6 +51,9 @@ export default function PopularRoute() {
               <div
                 className="o-popularRoute_listPlace_item"
                 key={`item-list-${item?._id.toString()}`}
+                onClick={() => {
+                  handleRedirect(item);
+                }}
               >
                 <div className="o-popularRoute_listPlace_left">
                   <Image
