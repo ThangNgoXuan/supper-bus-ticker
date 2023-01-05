@@ -26,6 +26,14 @@
       padding-right: rem(120);
     }
 
+    &_select {
+        display: flex;
+
+        .a-button {
+            width: fit-content;
+        }
+    }
+
     &_searchWrap {
         margin: rem(60) 0 rem(20);
 

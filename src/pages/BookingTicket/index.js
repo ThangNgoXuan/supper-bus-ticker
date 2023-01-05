@@ -103,7 +103,7 @@ export default function BookingTicket() {
         indexActive: 0,
       });
     }
-  }, []);
+  }, [values.dateUrl]);
 
   console.log("data", values.dataFindRoute);
 
@@ -221,7 +221,7 @@ export default function BookingTicket() {
                                 {item?.price} VNĐ
                               </Text>
                               <Text modifiers={["14x18"]}>
-                                {item?.seat_diagram[0]?.name}
+                                {item?.seat_diagram?.[0]?.name}
                               </Text>
                               <Text modifiers={["14x18"]}>
                                 {/* {item?.remaining} */}
@@ -234,13 +234,13 @@ export default function BookingTicket() {
                           </div>
                           <div className="p-bookingTicket_item_bookingWrap">
                             <div className="p-bookingTicket_item_chairWrap">
-                              {item?.seat_diagram[0]?.type == "bunk" && (
+                              {item?.seat_diagram?.[0]?.type == "bunk" && (
                                 <div className="p-bookingTicket_bunk">
                                   <div className="p-bookingTicket_bunk_floor1">
                                     <div className="A0" />
                                     <div className="A000" />
                                     <div className="A00" />
-                                    {item?.seat_diagram[0]?.schema?.floor1?.map(
+                                    {item?.seat_diagram?.[0]?.schema?.floor1?.map(
                                       (ele) => (
                                         <div
                                           className={`p-bookingTicket_chair ${ele?.name}  p-bookingTicket_${ele?.status}`}
@@ -258,7 +258,7 @@ export default function BookingTicket() {
                                     <div className="A0" />
                                     <div className="A000" />
                                     <div className="A00" />
-                                    {item?.seat_diagram[0]?.schema?.floor2?.map(
+                                    {item?.seat_diagram?.[0]?.schema?.floor2?.map(
                                       (ele) => (
                                         <div
                                           className={`p-bookingTicket_chair ${ele?.name}  p-bookingTicket_${ele?.status}`}

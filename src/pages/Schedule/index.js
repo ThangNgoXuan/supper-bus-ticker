@@ -10,45 +10,10 @@ import { useEffect } from "react";
 import newsApi from "../../api/newsApi";
 import routesApi from "../../api/routesApi";
 import { LoadingComponent } from "../../components/molecules/Loading";
+import Select from "react-select";
+import useValues from "../../hooks/useValues";
 
 const title = "Tìm chuyến xe";
-const dataList = new Array(20).fill({
-  addressFrom: "Hồ Chí Minh",
-  addressEnd: [
-    {
-      address: "Hà Nội",
-      time: "8",
-      km: "300",
-      type: "Giường",
-      linkDetail: "/chi-tiet-chuyen-xe",
-      linkBook: "/dat-ve",
-    },
-    {
-      address: "Hà Nội",
-      time: "8",
-      km: "300",
-      type: "Giường",
-      linkDetail: "/chi-tiet-chuyen-xe",
-      linkBook: "/dat-ve",
-    },
-    {
-      address: "Hà Nội",
-      time: "8",
-      km: "300",
-      type: "Giường",
-      linkDetail: "/chi-tiet-chuyen-xe",
-      linkBook: "/dat-ve",
-    },
-    {
-      address: "Hà Nội",
-      time: "8",
-      km: "300",
-      type: "Giường",
-      linkDetail: "/chi-tiet-chuyen-xe",
-      linkBook: "/dat-ve",
-    },
-  ],
-});
 
 const listTh = [
   { item: "Tuyến đường" },
@@ -60,19 +25,32 @@ const listTh = [
 ];
 
 export default function Schedule() {
+  const [values, setValues] = useValues({
+    listRoutes: [],
+    selectedRoute: ''
+  });
+
   const [loading, data, _, fetch, refetch] = useFetch(
     {},
     routesApi.getRoutesGroupby
   );
 
+  console.log('data',data);
+
   useEffect(() => {
     fetch({}, true);
     /*eslint-disable-next-line */
+    setValues({
+      listRoutes: data
+    })
   }, []);
 
   /*eslint-disable-next-line */
   if (loading) return <div>Loading...</div>;
 
+  console.log('listRoute', values)
+
+  const handleSelectRoute = () => {};
   return (
     <>
       <div className="p-schedule">
@@ -80,8 +58,16 @@ export default function Schedule() {
           <Text modifiers={["22x32", "coolBlack", "600"]}>
             Search chuyến đi
           </Text>
-          <div className="p-schedule_searchWrap_search">
-            <Input placeholder="Nhập điểm đến" />
+          <div className="p-schedule_select">
+              <Select
+                onChange={(seleted) => handleSelectRoute(seleted)}
+                options={values.listRoutes}
+                value={values.selectedRoute}
+                placeholder="Chọn tuyến xe"
+                styles={{
+                  width:'500px',
+                }}
+              />
             <Button>
               <FiSearch />
             </Button>
